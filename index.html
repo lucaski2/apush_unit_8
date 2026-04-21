@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>APUSH Unit 8 Study Guide · 1945–1980</title>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #f7f6f2; --card: #ffffff; --border: #e2e0d8; --border2: #c8c6be;
+  --text: #1a1a18; --muted: #5a5956; --hint: #9b9a96;
+  --blue: #185FA5; --blue-l: #E6F1FB; --blue-m: #378ADD;
+  --teal: #0F6E56; --teal-l: #E1F5EE; --teal-m: #1D9E75;
+  --amber: #854F0B; --amber-l: #FAEEDA; --amber-m: #EF9F27;
+  --red: #A32D2D; --red-l: #FCEBEB; --red-m: #E24B4A;
+  --purple: #534AB7; --purple-l: #EEEDFE; --purple-m: #7F77DD;
+  --coral: #993C1D; --coral-l: #FAECE7; --coral-m: #D85A30;
+  --green: #3B6D11; --green-l: #EAF3DE; --green-m: #639922;
+  --r: 10px; --rs: 6px;
+  --sans: 'Helvetica Neue', Arial, sans-serif;
+  --serif: Georgia, 'Times New Roman', serif;
+}
+body { font-family: var(--sans); background: var(--bg); color: var(--text); min-height: 100vh; font-size: 14px; }
+
+header { background: #1a1a18; color: #f7f6f2; padding: 1.75rem 2rem 1.5rem; }
+header .eyebrow { font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; opacity: 0.5; margin-bottom: 0.4rem; }
+header h1 { font-family: var(--serif); font-size: 26px; font-weight: normal; margin-bottom: 0.2rem; }
+header .sub { font-size: 12px; opacity: 0.45; }
+
+nav { background: var(--card); border-bottom: 1px solid var(--border); padding: 0 2rem; display: flex; gap: 0; overflow-x: auto; scrollbar-width: none; }
+nav::-webkit-scrollbar { display: none; }
+nav button { font-family: var(--sans); font-size: 12px; padding: 13px 15px; background: transparent; border: none; border-bottom: 2px solid transparent; cursor: pointer; color: var(--muted); white-space: nowrap; transition: all 0.15s; font-weight: 500; }
+nav button:hover { color: var(--text); }
+nav button.active { color: var(--text); border-bottom-color: var(--text); }
+
+main { max-width: 940px; margin: 0 auto; padding: 2rem; }
+.section { display: none; }
+.section.active { display: block; animation: fade 0.18s ease; }
+@keyframes fade { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
+
+h2 { font-family: var(--serif); font-size: 22px; font-weight: normal; margin-bottom: 1.25rem; }
+h3.sh { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--hint); margin: 1.75rem 0 0.75rem; padding-bottom: 0.45rem; border-bottom: 1px solid var(--border); }
+
+.g2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 10px; margin-bottom: 1rem; }
+.g3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(175px, 1fr)); gap: 10px; margin-bottom: 1rem; }
+.g4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 8px; margin-bottom: 1rem; }
+
+.card { background: var(--card); border: 1px solid var(--border); border-radius: var(--r); padding: 1rem 1.1rem; }
+.card h4 { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 5px; }
+.card p, .card li { font-size: 13px; color: var(--muted); line-height: 1.65; }
+.card ul { padding-left: 1.1rem; margin-top: 5px; }
+.card li { margin-bottom: 3px; }
+.card .note { font-size: 11px; color: var(--hint); margin-top: 6px; font-style: italic; }
+.bl { border-left: 3px solid var(--blue-m); }
+.bt { border-left: 3px solid var(--teal-m); }
+.ba { border-left: 3px solid var(--amber-m); }
+.br { border-left: 3px solid var(--red-m); }
+.bp { border-left: 3px solid var(--purple-m); }
+.bc { border-left: 3px solid var(--coral-m); }
+.bg { border-left: 3px solid var(--green-m); }
+
+.pill { display: inline-block; font-size: 11px; font-weight: 600; padding: 2px 9px; border-radius: 99px; margin: 2px; }
+.pb { background: var(--blue-l); color: var(--blue); }
+.pt { background: var(--teal-l); color: var(--teal); }
+.pa { background: var(--amber-l); color: var(--amber); }
+.pr { background: var(--red-l); color: var(--red); }
+.pp { background: var(--purple-l); color: var(--purple); }
+.pc { background: var(--coral-l); color: var(--coral); }
+.pg { background: var(--green-l); color: var(--green); }
+
+.tl { padding-left: 1.6rem; position: relative; }
+.tl::before { content:''; position:absolute; left:5px; top:8px; bottom:8px; width:1px; background:var(--border2); }
+.tl-item { position:relative; margin-bottom:1.2rem; }
+.tl-item::before { content:''; position:absolute; left:-1.35rem; top:5px; width:9px; height:9px; border-radius:50%; background:var(--hint); border:2px solid var(--bg); }
+.tl-item.hl::before { background:var(--blue-m); }
+.tl-item.rt::before { background:var(--red-m); }
+.tl-item.gt::before { background:var(--teal-m); }
+.tl-yr { font-size:10px; font-weight:700; letter-spacing:0.06em; color:var(--hint); margin-bottom:2px; }
+.tl-item h4 { font-size:13px; font-weight:600; color:var(--text); margin-bottom:3px; }
+.tl-item p { font-size:12px; color:var(--muted); line-height:1.6; }
+.tl-item ul { font-size:12px; color:var(--muted); line-height:1.6; padding-left:1rem; margin-top:3px; }
+
+.row { display:flex; gap:10px; align-items:baseline; padding:7px 0; border-bottom:1px solid var(--border); }
+.row:last-child { border-bottom:none; }
+.rl { font-weight:600; color:var(--muted); font-size:11px; min-width:140px; flex-shrink:0; }
+.rv { color:var(--text); flex:1; line-height:1.55; font-size:13px; }
+
+.banner { background: #1a1a18; color: #f7f6f2; border-radius: var(--r); padding: 1.25rem 1.5rem; margin-bottom: 1.25rem; }
+.banner h3 { font-family: var(--serif); font-size: 17px; font-weight: normal; margin-bottom: 0.5rem; }
+.banner p { font-size: 13px; opacity: 0.7; line-height: 1.7; }
+
+/* FLUENCY - flashcard style */
+.flu-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(200px, 1fr)); gap:10px; margin-bottom:1.5rem; }
+.flu { background:var(--card); border:1px solid var(--border); border-radius:var(--r); padding:1rem 1.1rem; cursor:pointer; transition:all 0.15s; user-select:none; }
+.flu:hover { border-color:var(--border2); box-shadow:0 2px 8px rgba(0,0,0,0.05); }
+.flu.open { border-color:var(--blue-m); background:#fafeff; }
+.flu .ft { font-size:13px; font-weight:600; color:var(--text); margin-bottom:4px; }
+.flu .fcat { font-size:10px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; margin-bottom:6px; }
+.flu .fd { font-size:12px; color:var(--muted); line-height:1.6; display:none; }
+.flu.open .fd { display:block; }
+.flu .fh { font-size:10px; color:var(--hint); margin-top:4px; }
+.flu.open .fh { display:none; }
+.flu .fdetail { font-size:11px; color:var(--hint); margin-top:6px; line-height:1.5; border-top:1px solid var(--border); padding-top:6px; display:none; }
+.flu.open .fdetail { display:block; }
+
+/* DEEP FLUENCY - expanded card */
+.dflu-list { display:flex; flex-direction:column; gap:8px; }
+.dflu { background:var(--card); border:1px solid var(--border); border-radius:var(--r); overflow:hidden; }
+.dflu-header { display:flex; align-items:center; gap:12px; padding:0.9rem 1.1rem; cursor:pointer; }
+.dflu-header:hover { background:var(--bg); }
+.dflu-num { font-size:11px; font-weight:700; color:var(--hint); min-width:22px; }
+.dflu-term { font-size:14px; font-weight:600; color:var(--text); flex:1; }
+.dflu-cat { font-size:10px; font-weight:700; letter-spacing:0.07em; text-transform:uppercase; padding:2px 8px; border-radius:99px; flex-shrink:0; }
+.dflu-arrow { font-size:12px; color:var(--hint); transition:transform 0.2s; }
+.dflu.open .dflu-arrow { transform:rotate(90deg); }
+.dflu-body { display:none; padding:0 1.1rem 1.1rem; border-top:1px solid var(--border); }
+.dflu.open .dflu-body { display:block; }
+.dflu-body .who { font-size:12px; font-weight:600; color:var(--muted); margin-top:0.75rem; margin-bottom:0.2rem; }
+.dflu-body p { font-size:13px; color:var(--muted); line-height:1.7; margin-top:0.5rem; }
+.dflu-body .why { background:var(--bg); border-radius:var(--rs); padding:0.6rem 0.8rem; margin-top:0.6rem; font-size:12px; color:var(--muted); line-height:1.6; }
+.dflu-body .why strong { color:var(--text); }
+.dflu-body ul { padding-left:1.1rem; margin-top:5px; }
+.dflu-body li { font-size:12px; color:var(--muted); line-height:1.6; margin-bottom:2px; }
+.dflu-body .dates { display:flex; gap:8px; flex-wrap:wrap; margin-top:6px; }
+.dflu-body .date-pill { font-size:11px; background:var(--bg); border:1px solid var(--border); border-radius:99px; padding:2px 10px; color:var(--muted); }
+
+/* Quiz */
+.qcard { background:var(--card); border:1px solid var(--border); border-radius:var(--r); padding:1.25rem; margin-bottom:1rem; max-width:640px; }
+.qt { font-size:14px; color:var(--text); line-height:1.7; margin-bottom:1rem; font-weight:500; }
+.qopt { display:block; width:100%; text-align:left; padding:9px 13px; margin-bottom:6px; font-size:13px; border-radius:var(--rs); border:1px solid var(--border); background:transparent; cursor:pointer; color:var(--text); font-family:var(--sans); transition:background 0.1s; }
+.qopt:hover:not(:disabled) { background:var(--bg); border-color:var(--border2); }
+.qopt.ok { background:var(--green-l); border-color:var(--green-m); color:var(--green); font-weight:600; }
+.qopt.no { background:var(--red-l); border-color:var(--red-m); color:var(--red); }
+.qnav { display:flex; gap:8px; align-items:center; flex-wrap:wrap; margin-top:0.75rem; }
+.qnav button { padding:7px 18px; border:1px solid var(--border2); border-radius:var(--rs); background:transparent; cursor:pointer; font-size:13px; font-family:var(--sans); color:var(--text); }
+.qnav button:hover { background:var(--card); }
+.qprog { font-size:12px; color:var(--muted); margin-bottom:0.75rem; }
+.qscore-badge { font-size:12px; font-weight:600; background:var(--bg); border:1px solid var(--border); border-radius:99px; padding:4px 12px; color:var(--muted); }
+.qfb { font-size:12px; margin-top:0.65rem; font-weight:600; padding:6px 10px; border-radius:var(--rs); }
+.qfb.good { background:var(--green-l); color:var(--green); }
+.qfb.bad { background:var(--red-l); color:var(--red); }
+.qexpl { font-size:12px; color:var(--muted); margin-top:6px; line-height:1.6; padding:7px 10px; background:var(--bg); border-radius:var(--rs); }
+
+@media(max-width:600px) { main { padding:1rem; } header { padding:1.25rem; } }
+</style>
+</head>
+<body>
+<header>
+  <div class="eyebrow">APUSH · Unit 8</div>
+  <h1>Mid-20th Century America</h1>
+  <div class="sub">1945–1980 · Complete Study Guide</div>
+</header>
+<nav id="mainnav">
+  <button class="active" onclick="show('ov')">Overview</button>
+  <button onclick="show('cw')">Cold War</button>
+  <button onclick="show('hf')">Cold War at Home</button>
+  <button onclick="show('pw')">Postwar Society</button>
+  <button onclick="show('cr')">Civil Rights</button>
+  <button onclick="show('lbj')">LBJ &amp; Great Society</button>
+  <button onclick="show('nx')">Nixon–Carter</button>
+  <button onclick="show('fl')">Fluency Flashcards</button>
+  <button onclick="show('df')">Deep Fluency Facts</button>
+  <button onclick="show('qz')">Quiz</button>
+</nav>
+<main>
+
+<!-- ═══════════════ OVERVIEW ═══════════════ -->
+<div class="section active" id="ov">
+  <h2>Unit Overview</h2>
+  <div class="banner">
+    <h3>Three interlocking threads hold Unit 8 together</h3>
+    <p>
+      <strong style="color:#f7f6f2">1. Containment:</strong> Every foreign policy decision flows from the goal of stopping communism's spread — Korea, Vietnam, Guatemala, the Marshall Plan, détente, Camp David, SALT.<br>
+      <strong style="color:#f7f6f2">2. Rights Expansion:</strong> Each decade more Americans demand inclusion in the American promise — Black Americans, women, Latinos, Indigenous peoples, LGBTQ+ people. The Civil Rights Movement becomes a template.<br>
+      <strong style="color:#f7f6f2">3. Liberalism's Rise and Fall:</strong> FDR's New Deal → Truman → Ike (acceptance) → JFK → LBJ peak → Vietnam/backlash → Nixon → Carter malaise → Reagan waiting in the wings.
+    </p>
+  </div>
+  <div class="g2">
+    <div class="card bl"><h4>The Cold War (Foreign Policy)</h4><p>U.S.–Soviet rivalry shaped every foreign policy decision for four decades. The core strategy was containment — don't let communism spread further. This led to the Marshall Plan, NATO, Korea, Vietnam, the Space Race, the Cuban Missile Crisis, détente, SALT treaties, and proxy wars across Asia, Latin America, and Africa.</p></div>
+    <div class="card bt"><h4>The Civil Rights Era</h4><p>The long struggle against American apartheid — segregation, disenfranchisement, economic exclusion. Fought through the courts (Brown), direct action (Montgomery, sit-ins, Selma), legislation (Civil Rights Act, Voting Rights Act), and ultimately Black Power when legal equality proved insufficient to address structural inequality.</p></div>
+    <div class="card ba"><h4>Postwar Prosperity & Its Discontents</h4><p>WWII created the middle class (GI Bill, union wages, booming economy). Suburbanization, baby boom, Sunbelt growth. But prosperity brought conformity and anxiety — nuclear fear, Red Scare, rigid gender roles. The Beat Generation, rock 'n' roll, and eventually the Counterculture pushed back.</p></div>
+    <div class="card bc"><h4>LBJ's Great Society</h4><p>The peak of American liberalism: Medicare, Medicaid, Voting Rights Act, War on Poverty, education funding, Immigration Act. LBJ had bigger congressional majorities than any president since FDR. But Vietnam consumed his presidency, resources, and political capital — then triggered a conservative backlash that defined American politics for the next 50 years.</p></div>
+    <div class="card br"><h4>Nixon Through Carter: Crisis & Disillusionment</h4><p>Watergate destroyed trust in government. Stagflation destroyed economic confidence. Vietnam's fall destroyed confidence in American power. The Iranian hostage crisis destroyed confidence in Carter. By 1980, Americans had absorbed a decade of trauma — assassinations, defeat, corruption, inflation, humiliation — and were ready for Ronald Reagan's optimistic conservatism.</p></div>
+    <div class="card bp"><h4>Identity Movements</h4><p>The Civil Rights Movement became a template. Women's liberation (NOW, ERA, Roe), Chicano movement (UFW, Brown Berets), American Indian Movement (Wounded Knee), gay rights (Stonewall), Asian American movement — all demanded that America live up to its stated values. These movements reshaped culture, law, and politics in ways still felt today.</p></div>
+  </div>
+
+  <h3 class="sh">All Topics at a Glance</h3>
+  <div class="card">
+    <div class="row"><div class="rl">Korean War</div><div class="rv">1950–53 · containment applied · limited war · MacArthur fired · armistice not peace · still divided</div></div>
+    <div class="row"><div class="rl">Ike & MIC</div><div class="rv">Eisenhower warns about Military-Industrial Complex in 1961 farewell · "massive retaliation" · interstate highways · Modern Republicanism</div></div>
+    <div class="row"><div class="rl">McCarthyism</div><div class="rv">Second Red Scare · HUAC · Hollywood blacklist · Army-McCarthy Hearings 1954 · censured · legacy of fear</div></div>
+    <div class="row"><div class="rl">1950s Conformity</div><div class="rv">Suburbs · nuclear anxiety · gender roles · "Organization Man" · Beat Generation · Rock 'n' Roll challenge</div></div>
+    <div class="row"><div class="rl">JFK 1961–63</div><div class="rv">New Frontier · Bay of Pigs failure · Cuban Missile Crisis · Berlin Wall · assassination Dallas 1963</div></div>
+    <div class="row"><div class="rl">Civil Rights</div><div class="rv">WWII origins → Brown 1954 → Montgomery 1955 → sit-ins → Freedom Rides → Birmingham → March on Washington → Civil Rights Act 1964 → Selma → VRA 1965 → Black Power → King assassination 1968</div></div>
+    <div class="row"><div class="rl">LBJ Great Society</div><div class="rv">Medicare · Medicaid · Voting Rights Act · War on Poverty · Immigration Act · ESEA · peak liberalism · Vietnam undermines everything</div></div>
+    <div class="row"><div class="rl">Vietnam War</div><div class="rv">Gulf of Tonkin 1964 → escalation → Tet 1968 → antiwar movement → Vietnamization → bombing Cambodia → Paris Accords 1973 → Fall of Saigon 1975</div></div>
+    <div class="row"><div class="rl">Identity Movements</div><div class="rv">Black Power · Chicano/UFW · Women's Lib · AIM · Stonewall 1969 · ERA · Roe v. Wade</div></div>
+    <div class="row"><div class="rl">Nixon 1969–74</div><div class="rv">Southern Strategy · Silent Majority · détente · SALT I · Opening of China · Vietnamization · Watergate · resignation</div></div>
+    <div class="row"><div class="rl">Ford 1974–77</div><div class="rv">Nixon pardon · stagflation · WIN campaign · Fall of Saigon · lost 1976</div></div>
+    <div class="row"><div class="rl">Carter 1977–81</div><div class="rv">Camp David Accords · Panama Canal Treaty · energy crisis · stagflation · Iranian Hostage Crisis · SALT II · malaise · lost to Reagan</div></div>
+  </div>
+</div>
+
+<!-- ═══════════════ COLD WAR ═══════════════ -->
+<div class="section" id="cw">
+  <h2>The Cold War</h2>
+  <div class="banner">
+    <h3>Why did the Cold War start?</h3>
+    <p>WWII left only two superpowers standing. The U.S. and USSR had fundamentally incompatible systems — capitalist democracy vs. communist authoritarianism — and both had the military power and ideological conviction to shape the postwar world. Their wartime alliance collapsed almost immediately as Stalin installed puppet governments in Eastern Europe. The question was: how far would communism spread?</p>
+  </div>
+
+  <h3 class="sh">Foundational Policies (1947–49)</h3>
+  <div class="g3">
+    <div class="card bl"><h4>Containment (Kennan, 1946)</h4><p>George Kennan's "Long Telegram" and "X Article": the USSR was inherently expansionist, but if contained long enough, it would eventually collapse from internal contradictions. Don't roll it back — just stop it from spreading. This became the foundation of all U.S. Cold War strategy.</p></div>
+    <div class="card bl"><h4>Truman Doctrine (1947)</h4><p>Greece and Turkey faced communist insurgencies. Truman asked Congress for $400M in aid, declaring the U.S. would "support free peoples" resisting communism. This was a massive break from isolationism — committing the U.S. to intervene anywhere communism threatened. Essentially applied containment globally.</p></div>
+    <div class="card bl"><h4>Marshall Plan (1948)</h4><p>Secretary of State George Marshall proposed $13.3 billion to rebuild war-devastated Western European economies. The logic: poverty breeds communism. Countries that received Marshall Plan aid included Britain, France, West Germany, Italy. The Soviets rejected it and pressured Eastern Europe to do the same. Hugely successful — Western Europe recovered rapidly.</p></div>
+    <div class="card bl"><h4>NATO (1949)</h4><p>North Atlantic Treaty Organization: 12 founding members agreed that an attack on one was an attack on all (Article 5). First permanent peacetime military alliance in U.S. history — Washington had warned against "entangling alliances." Triggered the Soviet creation of the Warsaw Pact (1955). NATO still exists today.</p></div>
+    <div class="card bl"><h4>Berlin Blockade/Airlift (1948–49)</h4><p>Stalin blocked all land routes to West Berlin (deep inside Soviet-controlled East Germany), hoping to starve it into submission. Truman refused to abandon it. The U.S. and allies flew in 2.3 million tons of supplies over 11 months — sometimes a plane landed every 90 seconds. Stalin backed down. First major Cold War standoff, U.S. won without firing a shot.</p></div>
+    <div class="card bl"><h4>NSC-68 (1950)</h4><p>Top-secret National Security Council report: argued the Soviet threat was existential, recommended quadrupling U.S. defense spending. Korean War's outbreak gave Truman political cover to implement it. Defense spending went from $13B to $50B. Set the pattern of massive military spending that defined the Cold War era.</p></div>
+  </div>
+
+  <h3 class="sh">Major Conflicts & Crises</h3>
+  <div class="tl">
+    <div class="tl-item hl"><div class="tl-yr">1950–1953</div><h4>Korean War</h4><p>North Korea (backed by USSR and China) invaded South Korea June 25, 1950. Truman intervened under UN authorization without a congressional declaration of war — calling it a "police action." MacArthur pushed North Korean forces to the Chinese border, provoking China's entry with 300,000 troops. MacArthur publicly demanded attacking China; Truman fired him for insubordination, asserting civilian control of the military. Armistice signed July 1953 near the original border. Korea remains divided today at the 38th parallel. 36,000 Americans died — called "The Forgotten War."</p></div>
+    <div class="tl-item"><div class="tl-yr">1954</div><h4>Guatemala (CIA Operation PBSUCCESS)</h4><p>Democratically elected President Jacobo Árbenz nationalized land from United Fruit Company (a U.S. corporation). CIA organized a coup, replacing him with a military dictator. Pattern of U.S. interventionism in Latin America — prioritizing anti-communism over democracy. Set tone for decades of U.S. involvement in the region.</p></div>
+    <div class="tl-item"><div class="tl-yr">1953</div><h4>Iran (Operation Ajax)</h4><p>CIA and British intelligence overthrew Prime Minister Mossadegh, who had nationalized Iran's oil industry. Reinstalled the Shah. Created lasting anti-American resentment in Iran that exploded in the 1979 Islamic Revolution.</p></div>
+    <div class="tl-item hl"><div class="tl-yr">1957</div><h4>Sputnik & the Space Race</h4><p>The USSR launched the world's first satellite October 4, 1957. Americans were shocked — if Soviets could orbit a satellite, they could deliver nuclear warheads. Congress passed National Defense Education Act (1958), pouring money into science and math education. NASA created 1958. Kennedy committed to moon landing 1961. Apollo 11 landed July 20, 1969 — Neil Armstrong and Buzz Aldrin. Enormous symbolic Cold War victory for the U.S.</p></div>
+    <div class="tl-item hl"><div class="tl-yr">1961</div><h4>Bay of Pigs</h4><p>CIA-trained Cuban exiles attempted to invade Cuba and overthrow Fidel Castro. JFK approved the plan but denied air support. Invasion was a fiasco — all 1,400 invaders captured. Major embarrassment for Kennedy. Strengthened Castro's position and pushed Cuba closer to USSR.</p></div>
+    <div class="tl-item hl"><div class="tl-yr">1962</div><h4>Cuban Missile Crisis — 13 Days</h4><p>U.S. U-2 spy plane photographed Soviet nuclear missile installations being built in Cuba. JFK was briefed October 16. Options: air strike (risked nuclear war), invasion (same), or naval blockade (less provocative). Kennedy chose "quarantine" (blockade) and demanded Soviets remove missiles. 13 days of terrifying standoff. Resolved: USSR removed missiles publicly; U.S. pledged not to invade Cuba and secretly removed missiles from Turkey (not announced for 25 years). Hotline established between White House and Kremlin. Closest humanity has come to nuclear war.</p></div>
+    <div class="tl-item"><div class="tl-yr">1965</div><h4>Dominican Republic Intervention</h4><p>LBJ sent 20,000 troops when a left-wing government was elected, fearing "another Cuba." Reflected deep anxiety about Latin American leftism during Cold War.</p></div>
+    <div class="tl-item hl"><div class="tl-yr">1964–1975</div><h4>Vietnam War (see Vietnam tab for full detail)</h4><p>Gulf of Tonkin Resolution 1964 gave LBJ blank check. Escalation to 543,000 troops. Tet Offensive 1968 shattered public confidence. Nixon's Vietnamization. Bombing of Cambodia (secret, then revealed). Paris Peace Accords 1973. Fall of Saigon April 30, 1975. 58,000 Americans killed; 2–3 million Vietnamese.</p></div>
+    <div class="tl-item"><div class="tl-yr">1973</div><h4>Yom Kippur War & OPEC Embargo</h4><p>Egypt and Syria attacked Israel on Yom Kippur. U.S. airlifted weapons to Israel; Israel prevailed. Arab OPEC nations imposed oil embargo on U.S. for its support of Israel. Gas prices quadrupled; long lines at gas stations. Revealed dangerous U.S. dependence on foreign oil. Contributed to stagflation and the energy crisis that plagued the 1970s.</p></div>
+    <div class="tl-item"><div class="tl-yr">1972–79</div><h4>Détente</h4><p>Nixon and National Security Advisor Henry Kissinger pursued "realist" foreign policy — engage with adversaries, reduce tensions, manage rivalry rather than crusade against it. Key achievements: SALT I (1972), Opening of China (1972), Helsinki Accords (1975). Controversial among conservatives who saw it as accepting communist gains. Ended when Soviets invaded Afghanistan (1979).</p></div>
+    <div class="tl-item"><div class="tl-yr">1978</div><h4>Camp David Accords</h4><p>Carter brokered 13-day negotiations between Israeli PM Begin and Egyptian President Sadat at Camp David. Framework for peace between Israel and Egypt — Egypt became first Arab nation to recognize Israel. Egypt got Sinai Peninsula back. Sadat assassinated 1981 for making peace. Carter's greatest foreign policy achievement.</p></div>
+  </div>
+
+  <h3 class="sh">Decolonization & the Non-Aligned World</h3>
+  <div class="card">
+    <p>As European empires collapsed after WWII, dozens of new nations formed in Asia, Africa, and the Middle East. Both superpowers competed to bring these nations into their orbit. The Non-Aligned Movement (led by India's Nehru, Egypt's Nasser, Yugoslavia's Tito) tried to remain independent. The U.S. repeatedly undermined this by supporting anti-communist authoritarian governments over nationalist/leftist democratic movements — sowing long-term resentment. Examples: Vietnam (supported corrupt South Vietnamese government), Guatemala (overthrew democratic Árbenz), Iran (overthrew democratic Mossadegh), Congo (supported Mobutu after Lumumba assassination).</p>
+  </div>
+</div>
+
+<!-- ═══════════════ COLD WAR AT HOME ═══════════════ -->
+<div class="section" id="hf">
+  <h2>The Cold War at Home</h2>
+
+  <h3 class="sh">McCarthyism & The Second Red Scare</h3>
+  <div class="g2">
+    <div class="card br"><h4>Origins of the Second Red Scare</h4><p>Multiple shocks in 1949–50 triggered panic: China "fell" to communism (October 1949), Soviets tested their first atomic bomb (August 1949), and Alger Hiss (senior State Department official) was convicted of perjury related to Soviet espionage. The Communist Party USA had 75,000 members. Fear was real, even if the response was wildly disproportionate.</p></div>
+    <div class="card br"><h4>HUAC & Hollywood</h4><p>House Un-American Activities Committee investigated communist influence in Hollywood. The "Hollywood Ten" refused to testify and were jailed for contempt of Congress. Hundreds of writers, directors, and actors were blacklisted. Films like "High Noon" (1952) were read as allegories for McCarthyism. Dalton Trumbo wrote under a pseudonym for years.</p></div>
+    <div class="card br"><h4>Senator Joseph McCarthy</h4><p>Republican Senator from Wisconsin. February 1950 speech in Wheeling, WV: claimed to have a list of 205 communists in the State Department (he had no such list). Brilliant demagogue — constantly changed his numbers and accusations, always staying one step ahead. Targeted government officials, professors, union leaders. Used guilt by association, innuendo, and public pressure. His method: make the accusation, the damage is done whether proven or not.</p></div>
+    <div class="card br"><h4>Army-McCarthy Hearings (1954)</h4><p>McCarthy investigated communist infiltration of the U.S. Army. Televised nationally — 20 million watched. Army lawyer Joseph Welch delivered the devastating line: "Have you no sense of decency, sir, at long last?" The hearings showed McCarthy as a bully and reckless liar. Senate voted 67-22 to censure him for "conduct unbecoming." He died in 1957, largely ignored, of liver disease (alcoholism).</p></div>
+    <div class="card br"><h4>Rosenbergs & Alger Hiss</h4><p>Julius and Ethel Rosenberg convicted of passing nuclear secrets to Soviets. Executed 1953 — the only civilian executions for espionage in U.S. history. Alger Hiss, a State Department official, convicted of perjury related to Soviet espionage. Richard Nixon made his early career pursuing Hiss. Soviet archives later confirmed both cases had some basis, but the broader Red Scare swept up many innocents.</p></div>
+    <div class="card br"><h4>Legacy of McCarthyism</h4><p>The Red Scare chilled free speech and political dissent for years. The term "McCarthyism" entered the language as a synonym for reckless accusation and guilt by association. It disproportionately targeted leftists, civil rights activists, LGBTQ people (the "Lavender Scare"), and immigrants. Also gave conservatives political cover to label any liberal reform as "communist."</p></div>
+  </div>
+
+  <h3 class="sh">Eisenhower & The Military-Industrial Complex</h3>
+  <div class="g2">
+    <div class="card ba"><h4>Eisenhower's Presidency (1953–61)</h4><p>Five-star general who won WWII in Europe, then served two popular terms as president. "Modern Republicanism": accepted the New Deal's basic structure but didn't expand it. Balanced the budget. Ended the Korean War. Refused to escalate when Soviets crushed Hungarian uprising (1956). Sent troops to Little Rock to enforce school desegregation (1957) — reluctantly but importantly.</p></div>
+    <div class="card ba"><h4>The Farewell Address Warning</h4><p>January 17, 1961 — three days before JFK's inauguration. Eisenhower, who had spent his life in the military, warned: "In the councils of government, we must guard against the acquisition of unwarranted influence, whether sought or unsought, by the military-industrial complex. The potential for the disastrous rise of misplaced power exists and will persist." A general warning about war profiteering and the self-perpetuating logic of defense spending. Remarkably prescient.</p></div>
+    <div class="card ba"><h4>"New Look" Defense Policy</h4><p>Ike rejected massive conventional armies (too expensive) in favor of nuclear deterrence — "more bang for the buck." Relied on the threat of "massive retaliation" — any Soviet aggression might be met with nuclear response. This kept defense spending down but raised terrifying stakes if deterrence failed. CIA and covert operations also expanded as cheaper alternatives to conventional military action.</p></div>
+    <div class="card ba"><h4>U-2 Spy Plane Incident (1960)</h4><p>American spy plane shot down over Soviet territory. Ike initially lied about its mission, then was caught. Khrushchev used it to blow up the Paris Summit. Showed the risks of covert intelligence operations. Damaged Ike's final months in office and contributed to Cold War tensions JFK inherited.</p></div>
+  </div>
+
+  <h3 class="sh">The Anti-Vietnam War Movement</h3>
+  <div class="tl">
+    <div class="tl-item"><div class="tl-yr">1964</div><h4>Gulf of Tonkin Resolution</h4><p>After (dubious) reports of North Vietnamese attacks on U.S. ships, Congress gave LBJ virtually unlimited authority to wage war in Vietnam. No formal declaration of war. Later revealed the second "attack" likely never happened. Passed 88-2 in Senate. This became the legal basis for the entire war.</p></div>
+    <div class="tl-item rt"><div class="tl-yr">1965–67</div><h4>Campus Protests Begin</h4><p>SDS (Students for a Democratic Society) led "teach-ins" at universities. March on Pentagon 1967 (100,000 protesters). Burning of draft cards. "Hey, hey, LBJ — how many kids did you kill today?" Draft disproportionately fell on poor and minority men who couldn't get deferments.</p></div>
+    <div class="tl-item rt"><div class="tl-yr">1968</div><h4>Tet Offensive & Political Collapse</h4><p>NVA and Viet Cong attacked 100+ South Vietnamese cities simultaneously during Tet (Lunar New Year). U.S. forces repelled the attack militarily, but it shattered the administration's claim that the U.S. was winning. Walter Cronkite declared the war a "stalemate." LBJ's approval collapsed. RFK entered the race. LBJ announced he would not run for re-election.</p></div>
+    <div class="tl-item rt"><div class="tl-yr">1968</div><h4>Chicago Democratic National Convention</h4><p>Chicago Mayor Daley's police beat antiwar protesters in the streets. The whole world watched on TV. Humphrey nominated despite not entering a single primary. The party fractured. Nixon won the election partly by promising a "secret plan" to end the war.</p></div>
+    <div class="tl-item rt"><div class="tl-yr">1970</div><h4>Kent State</h4><p>Nixon announced bombing of Cambodia — students protested across the country. Ohio National Guard opened fire on protesters at Kent State University, killing 4 students and wounding 9. 4 million students went on strike at 900 campuses. Jackson State (Mississippi) — police killed 2 Black students two weeks later, received far less coverage.</p></div>
+    <div class="tl-item rt"><div class="tl-yr">1971</div><h4>Pentagon Papers</h4><p>Daniel Ellsberg leaked a 7,000-page Defense Department study showing the government had systematically lied to Congress and the public about Vietnam. Nixon tried to suppress publication — Supreme Court ruled against him (New York Times Co. v. United States). Accelerated collapse of public trust in government.</p></div>
+    <div class="tl-item gt"><div class="tl-yr">1973</div><h4>War Powers Act</h4><p>Congress passed over Nixon's veto. Required president to notify Congress within 48 hours of committing troops to combat; must withdraw in 60 days without congressional approval. Response to both Vietnam and Nixon's secret bombing of Cambodia. Every president since has disputed its constitutionality but partially complied.</p></div>
+  </div>
+</div>
+
+<!-- ═══════════════ POSTWAR SOCIETY ═══════════════ -->
+<div class="section" id="pw">
+  <h2>Postwar American Society</h2>
+
+  <h3 class="sh">The Postwar Economic Boom</h3>
+  <div class="g2">
+    <div class="card bt"><h4>GI Bill (Servicemen's Readjustment Act, 1944)</h4><p>Provided returning WWII veterans with college tuition (8 million used it), low-interest home loans (enabled suburbanization), unemployment insurance, and vocational training. Transformed American society — created a massive new middle class. Universities expanded enormously. Home ownership became the norm rather than the exception. Largely excluded Black veterans through discriminatory application by banks and colleges.</p></div>
+    <div class="card bt"><h4>Baby Boom (1946–1964)</h4><p>76 million babies born as returning veterans started families. Changed everything: schools built, suburbs expanded, consumer goods markets exploded. Boomers grew up in postwar prosperity, absorbed its contradictions, and became the generation that challenged everything in the 1960s and 70s. Their large numbers have dominated American politics ever since.</p></div>
+    <div class="card bt"><h4>Levittowns & Suburbanization</h4><p>William Levitt built mass-produced identical homes on Long Island (1947) — sold to veterans for $8,000 with no down payment. Suburbs exploded across America. Whites moved out; cities became majority-minority. Suburban life was car-dependent, conformist, and racially segregated by design (Levitt refused to sell to Black families; FHA redlining denied Black veterans equal access to loans). The suburb became the defining American living space.</p></div>
+    <div class="card bt"><h4>Sunbelt Migration</h4><p>Population shifted dramatically from the Rust Belt (Northeast/Midwest) to the Sunbelt (South and Southwest — Florida, Texas, Arizona, California). Enabled by: air conditioning, defense industry jobs (especially aerospace), lower cost of living, right-to-work laws. Political consequences: shifted electoral power from liberal Northern cities toward more conservative regions. California became the most populous state 1963. Texas and Florida emerged as major power centers.</p></div>
+  </div>
+
+  <h3 class="sh">Culture of Conformity (1950s)</h3>
+  <div class="g2">
+    <div class="card ba"><h4>The "Consensus" Culture</h4><p>The 1950s celebrated sameness: identical ranch houses, identical cars, identical TV shows, identical gender roles. Sociologist David Riesman's "The Lonely Crowd" (1950) described Americans as "other-directed" — defining themselves by peer approval rather than inner values. William Whyte's "The Organization Man" (1956) criticized the conformity demanded by large corporations. Everyone was expected to be normal, and normal was narrowly defined.</p></div>
+    <div class="card ba"><h4>Cold War Anxiety</h4><p>Beneath the prosperity lay deep fear. The Soviets had the bomb. They might attack at any moment. Duck-and-cover drills in schools. Backyard fallout shelters. The 1950s nuclear family partly emerged from genuine fear — suburban homes away from city centers were survival strategy. The "Atomic Café" culture (a 1982 documentary assembled this era's propaganda) shows how thoroughly nuclear anxiety saturated daily life.</p></div>
+    <div class="card ba"><h4>Gender Roles</h4><p>The "feminine mystique" (Betty Friedan's term): middle-class white women were expected to find complete fulfillment as wives and mothers in the suburbs. Women who worked outside the home were seen as threats to family stability. The postwar period actually reversed WWII gains for women in the workforce. Meanwhile, "Rosie the Riveter" became a housewife again. This manufactured contentment is what Friedan's 1963 book would explode.</p></div>
+    <div class="card ba"><h4>Television</h4><p>By 1955, half of American homes had a TV. It homogenized American culture, created national consumer markets, and promoted idealized suburban family life (Father Knows Best, Leave It to Beaver, Ozzie and Harriet). But television also showed Americans civil rights violence, anti-war protests, and Vietnam — eventually turning opinion against both. TV transformed politics: JFK won partly because he looked better on TV than Nixon.</p></div>
+  </div>
+
+  <h3 class="sh">Challenges to Conformity</h3>
+  <div class="g3">
+    <div class="card bp"><h4>The Beat Generation</h4><p>A small but culturally influential literary/artistic movement rejecting mainstream materialism. Allen Ginsberg's "Howl" (1956) — raw, explicit, and openly gay. Jack Kerouac's "On the Road" (1957) — celebrated spontaneity and freedom. William S. Burroughs. The "beatniks" lived in coffee shops in Greenwich Village and San Francisco. Direct precursor to the 1960s counterculture.</p></div>
+    <div class="card bp"><h4>Rock 'n' Roll</h4><p>Emerged from Black rhythm and blues. Chuck Berry, Little Richard, Fats Domino — crossed racial lines when white artists covered their songs (Elvis). Caused moral panic among white parents — its sexual energy, Black origins, and teenage rebellion threatened the social order. Dick Clark's American Bandstand helped mainstream it. Rock 'n' roll was genuinely subversive: it brought Black culture into white suburban homes and celebrated teenage autonomy.</p></div>
+    <div class="card bp"><h4>Betty Friedan & The Feminine Mystique (1963)</h4><p>Friedan surveyed her Smith College classmates (all middle-class white women) and found widespread depression, anxiety, and unfulfillment despite (or because of) their perfect suburban lives. She named "the problem that has no name" — the cultural expectation that women should find complete fulfillment in domesticity. The book sold 1.4 million copies in its first three years and directly helped launch second-wave feminism. Friedan co-founded NOW (National Organization for Women) in 1966.</p></div>
+    <div class="card bp"><h4>The Counterculture (1960s)</h4><p>The Baby Boom generation came of age skeptical of their parents' conformist, Cold War, and racist world. San Francisco's Haight-Ashbury became the center of hippie culture — communal living, psychedelics (LSD), free love, protest music (Bob Dylan, Joan Baez, Jefferson Airplane, Janis Joplin). Woodstock (August 1969): 400,000 attended. Linked to anti-Vietnam sentiment but also to broader rejection of corporate, consumerist, militaristic American culture. Faded by early 1970s — partly co-opted by commercial culture.</p></div>
+  </div>
+
+  <h3 class="sh">JFK (1961–1963)</h3>
+  <div class="g2">
+    <div class="card bl"><h4>The New Frontier</h4><p>JFK was the first president born in the 20th century. His inaugural address ("Ask not what your country can do for you...") captured a generation. Created the Peace Corps (1961). Committed to moon landing. His youth and glamour ("Camelot") contrasted sharply with Eisenhower's grandfatherly image. Supported civil rights cautiously — didn't push Congress hard until Birmingham's images shocked the nation.</p></div>
+    <div class="card bl"><h4>Bay of Pigs (April 1961)</h4><p>CIA plan, inherited from Eisenhower: 1,400 CIA-trained Cuban exiles would land in Cuba and trigger a popular uprising against Castro. JFK approved but denied air support. The invasion was a catastrophic failure — all invaders captured or killed. JFK took full responsibility publicly. The fiasco emboldened Khrushchev, who thought he could push around this young, inexperienced president — contributing to the Berlin Wall and Cuban Missile Crisis.</p></div>
+    <div class="card bl"><h4>Cuban Missile Crisis (October 1962)</h4><p>Resolved successfully — see Cold War section for detail. JFK's finest hour: kept cool under pressure, resisted military advisors who wanted immediate air strikes, gave Khrushchev a face-saving way out. The resolution established JFK's credibility and showed that nuclear brinksmanship could be managed. Led to the Limited Nuclear Test Ban Treaty (1963) and the Moscow-Washington hotline.</p></div>
+    <div class="card br"><h4>Assassination (November 22, 1963)</h4><p>Shot in Dallas motorcade. Lee Harvey Oswald arrested; killed by Jack Ruby two days later. LBJ sworn in on Air Force One. The Warren Commission concluded Oswald acted alone — conspiracy theories have persisted ever since. The assassination shattered the optimism of the early 1960s. LBJ used the national grief and JFK's legacy as political capital to push through the Civil Rights Act and Great Society legislation that Kennedy hadn't been able to pass.</p></div>
+  </div>
+
+  <h3 class="sh">Environmental Movement & Immigration</h3>
+  <div class="g2">
+    <div class="card bg"><h4>Origins of Environmentalism</h4><p>Rachel Carson's "Silent Spring" (1962) documented how pesticides (especially DDT) were killing birds and entering the food chain — bestseller that launched the modern environmental movement. Santa Barbara oil spill (1969). Cuyahoga River in Cleveland caught fire (1969). First Earth Day: April 22, 1970 — 20 million Americans participated. Nixon (ironically) created the EPA (1970), signed the Clean Air Act, Clean Water Act, and Endangered Species Act. Represented a new understanding that economic growth had environmental costs.</p></div>
+    <div class="card bp"><h4>Immigration Act of 1965 (Hart-Celler Act)</h4><p>Abolished the national-origins quota system established by the Immigration Act of 1924 (which heavily favored Northern and Western Europeans). Replaced it with preferences for family reunification and skills. Sponsors expected only modest changes — they were wildly wrong. Immigration from Asia, Latin America, Africa, and the Caribbean exploded. By 2000, immigrants from these regions and their descendants were transforming American culture, politics, and demographics. One of the most consequential laws of the 20th century.</p></div>
+  </div>
+</div>
+
+<!-- ═══════════════ CIVIL RIGHTS ═══════════════ -->
+<div class="section" id="cr">
+  <h2>The Civil Rights Movement</h2>
+
+  <h3 class="sh">WWII Origins (1941–1950)</h3>
+  <div class="card" style="margin-bottom:1rem">
+    <p>World War II created the conditions for the Civil Rights Movement. Over one million Black Americans served in a segregated military fighting against fascism and racism abroad — then returned home to Jim Crow. The <strong>Double V Campaign</strong> (promoted by the Pittsburgh Courier newspaper): victory against fascism overseas AND victory against racism at home. Black workers migrated north for factory jobs (Great Migration), building political power in Northern cities. A. Philip Randolph threatened a march on Washington in 1941, forcing FDR to ban discrimination in defense industries. Truman, moved by reports of returning veterans being beaten by police, desegregated the armed forces by executive order in 1948. The NAACP's legal strategy under Thurgood Marshall was methodically dismantling "separate but equal" in courts throughout the 1940s, culminating in Brown.</p>
+  </div>
+
+  <h3 class="sh">Full Timeline</h3>
+  <div class="tl">
+    <div class="tl-item hl"><div class="tl-yr">1954</div><h4>Brown v. Board of Education</h4><p>NAACP lawyer Thurgood Marshall argued before the Supreme Court that segregated schools were inherently unequal — psychological damage to Black children. Chief Justice Earl Warren wrote a unanimous opinion: "separate educational facilities are inherently unequal." Overturned Plessy v. Ferguson (1896). The South's response: "Southern Manifesto" signed by 101 congressional representatives vowing to resist. 10 years after Brown, only 2% of Southern Black children attended integrated schools. Brown was a legal victory that required immense political struggle to enforce.</p></div>
+    <div class="tl-item hl"><div class="tl-yr">1955–1956</div><h4>Montgomery Bus Boycott</h4><p>Rosa Parks arrested December 1, 1955 for refusing to give up her bus seat. The Women's Political Council had already planned a boycott — Parks' arrest was the spark. Black community organized and sustained a 381-day boycott of city buses — the economic backbone of the transit system. MLK, a 26-year-old new pastor at Dexter Avenue Baptist Church, emerged as leader. Legal challenge succeeded: Supreme Court ruled bus segregation unconstitutional. Proved that nonviolent economic pressure worked, and made MLK the movement's national face.</p></div>
+    <div class="tl-item"><div class="tl-yr">1957</div><h4>Little Rock Nine</h4><p>Nine Black students enrolled at all-white Central High School. Arkansas Governor Orval Faubus called in the National Guard to block them. Eisenhower federalized the National Guard and sent 101st Airborne paratroopers to escort the students. Powerful image: soldiers with rifles escorting children to school. Showed that integration required federal force against state resistance.</p></div>
+    <div class="tl-item"><div class="tl-yr">1957</div><h4>Civil Rights Act of 1957</h4><p>First civil rights legislation since Reconstruction — weak, but symbolic. Created Civil Rights Commission. Lyndon Johnson, as Senate Majority Leader, maneuvered it through Congress. Established pattern of LBJ as civil rights legislative strategist.</p></div>
+    <div class="tl-item hl"><div class="tl-yr">1960</div><h4>Greensboro Sit-Ins & SNCC</h4><p>February 1, 1960: Four Black college freshmen sat at Woolworth's lunch counter in Greensboro, NC and asked to be served. They were refused but stayed until closing. Within weeks, sit-ins spread to 54 cities in 9 states. Student Nonviolent Coordinating Committee (SNCC) founded at Shaw University — youth-led, more radical than SCLC, willing to take greater personal risk. The sit-in tactic worked: Woolworth's integrated its lunch counters in July 1960.</p></div>
+    <div class="tl-item"><div class="tl-yr">1961</div><h4>Freedom Rides</h4><p>CORE and SNCC activists rode interstate buses through the South to test Supreme Court rulings banning segregation in interstate travel. In Anniston, Alabama, a bus was fire-bombed. In Birmingham, riders were beaten by KKK while police stood aside (FBI informants in the crowd). Attorney General RFK negotiated with Alabama governor for protection. Federal government ultimately issued regulations enforcing desegregation of interstate travel facilities.</p></div>
+    <div class="tl-item"><div class="tl-yr">1962</div><h4>Ole Miss (Meredith)</h4><p>James Meredith attempted to enroll at University of Mississippi. Governor Ross Barnett physically blocked him. JFK federalized the Mississippi National Guard. Night of riots left 2 dead and 375 injured. Meredith enrolled the next morning with 500 federal marshals. JFK reluctant to confront Southern Democrats who controlled Congress — pushed toward stronger action by events on the ground.</p></div>
+    <div class="tl-item hl"><div class="tl-yr">1963</div><h4>Birmingham Campaign</h4><p>MLK and SCLC chose Birmingham deliberately — "the most segregated city in America." Police Commissioner "Bull" Connor predictably responded with fire hoses and police dogs against peaceful protesters, including children. Images broadcast worldwide. JFK called it "a national disgrace" and sent a civil rights bill to Congress. MLK arrested — wrote "Letter from Birmingham Jail" to white moderate clergy who criticized the timing: "injustice anywhere is a threat to justice everywhere."</p></div>
+    <div class="tl-item hl"><div class="tl-yr">Aug. 1963</div><h4>March on Washington</h4><p>250,000 people — the largest demonstration in American history to that point. MLK's "I Have a Dream" speech at the Lincoln Memorial. Coalition of civil rights groups, labor unions, religious organizations. Remarkable discipline and organization. Political goal: pressure Congress to pass JFK's civil rights bill. JFK met with leaders afterward and privately told them it was impressive. Two months later JFK was dead; LBJ used the moment to push the bill.</p></div>
+    <div class="tl-item"><div class="tl-yr">Sept. 1963</div><h4>16th Street Baptist Church Bombing</h4><p>KKK bombed Black church in Birmingham, killing four young girls. Addie Mae Collins, Cynthia Wesley, Carole Robertson, and Carol Denise McNair, ages 11–14. Shocked the nation. Accelerated pressure for civil rights legislation. Perpetrators not convicted until decades later.</p></div>
+    <div class="tl-item hl"><div class="tl-yr">1964</div><h4>Freedom Summer & Civil Rights Act</h4><p>SNCC brought hundreds of mostly white Northern college students to Mississippi to register Black voters. Three workers — Chaney, Goodman, Schwerner — murdered by KKK. Their deaths got national attention (partly because two were white). Civil Rights Act signed July 2, 1964: banned discrimination in public accommodations and employment; created EEOC; Title VII prohibited employment discrimination including sex. LBJ reportedly told aide after signing: "We have lost the South for a generation."</p></div>
+    <div class="tl-item hl"><div class="tl-yr">1965</div><h4>Selma & Voting Rights Act</h4><p>SCLC and SNCC organized marches from Selma to Montgomery to demand voting rights. March 7 — "Bloody Sunday" — state troopers attacked 600 marchers on the Edmund Pettus Bridge with clubs and tear gas. Broadcast nationally. LBJ addressed joint session of Congress: "We shall overcome." Voting Rights Act signed August 6, 1965. Eliminated literacy tests, poll taxes, and grandfather clauses. Required federal approval for voting law changes in states with histories of discrimination (Section 5). Black voter registration in the South exploded.</p></div>
+    <div class="tl-item"><div class="tl-yr">1965–68</div><h4>Urban Uprisings</h4><p>Legal victories hadn't addressed poverty, housing segregation, police brutality in Northern cities. Watts (Los Angeles, 1965): 34 killed, $40M damage — triggered by traffic stop. Newark (1967): 26 killed. Detroit (1967): 43 killed, 7,000 arrested, LBJ sent federal troops. Kerner Commission Report (1968): blamed "white racism" for creating conditions of poverty and frustration. "Two societies, one Black, one white — separate and unequal." White backlash: many whites blamed the violence on the movement, not the conditions the movement was fighting.</p></div>
+    <div class="tl-item hl"><div class="tl-yr">1966–68</div><h4>Black Power</h4><p>After Selma, SNCC chair Stokely Carmichael demanded "Black Power" — self-determination, community control, Black pride. Rejected integration as a goal (why integrate into a burning house?). Black Panther Party for Self-Defense founded by Huey Newton and Bobby Seale in Oakland, 1966. Armed patrols monitored police. Free breakfast for children, health clinics, community organizing. FBI Director J. Edgar Hoover called them "the greatest threat to the internal security of the country." COINTELPRO program infiltrated, disrupted, and helped eliminate Black Panther leadership through illegal means. Debate erupted within the movement: was nonviolence still viable after 1965?</p></div>
+    <div class="tl-item rt"><div class="tl-yr">1968</div><h4>MLK Assassination</h4><p>Martin Luther King Jr. was in Memphis supporting striking sanitation workers when he was shot on the balcony of the Lorraine Motel, April 4, 1968. He had been shifting focus toward economic justice and had come out against Vietnam (1967) — both made him more enemies. Riots erupted in 100+ cities. Fair Housing Act passed six days later. James Earl Ray convicted of the murder. The movement lost its most powerful unifying voice at the moment it needed it most.</p></div>
+  </div>
+
+  <h3 class="sh">Organizations</h3>
+  <div class="g3">
+    <div class="card bt"><h4>NAACP (founded 1909)</h4><p>National Association for the Advancement of Colored People. Legal strategy: systematically challenge segregation in courts. Thurgood Marshall's NAACP Legal Defense Fund won Brown. Oldest civil rights organization. More conservative, institutionalized approach — worked within the system. Over 500,000 members by 1960s.</p></div>
+    <div class="card bt"><h4>SCLC (1957)</h4><p>Southern Christian Leadership Conference. MLK's organization. Base in Black churches. Mass direct action, nonviolence rooted in Christian theology and Gandhi's methods. Key campaigns: Montgomery, Albany (failed), Birmingham (succeeded), Selma. Hierarchical — MLK was central. Funded partly by Northern liberals and labor unions.</p></div>
+    <div class="card bt"><h4>SNCC (1960)</h4><p>Student Nonviolent Coordinating Committee. Youth-led, more democratic structure, willing to take more risks than SCLC. Sit-ins, Freedom Rides, Freedom Summer, voter registration in dangerous rural areas. Initially nonviolent; after 1965 under Stokely Carmichael shifted to Black Power and expelled white members. John Lewis (later Congressman) was early SNCC leader.</p></div>
+    <div class="card bt"><h4>CORE (1942)</h4><p>Congress of Racial Equality. Founded on Gandhian nonviolence. Organized 1947 Journey of Reconciliation (precursor to Freedom Rides), the 1961 Freedom Rides. Later became more militant under Floyd McKissick and Roy Innis, embracing Black Power and Black nationalism.</p></div>
+    <div class="card bp"><h4>Black Panther Party (1966)</h4><p>Founded Oakland. Armed self-defense against police brutality. Ten-Point Program demanded full employment, decent housing, Black exemption from military service, and end to police brutality. Community survival programs: free breakfasts for 10,000 children daily, free health clinics. Federal and local authorities systematically destroyed them through COINTELPRO. Fred Hampton (Chicago chairman, 21 years old) killed in his bed in an FBI-directed police raid in 1969.</p></div>
+    <div class="card bl"><h4>Government Response</h4>
+    <ul>
+      <li><strong>Executive:</strong> Truman (desegregated army 1948); Eisenhower (enforced Little Rock reluctantly); JFK (sent marshals to Ole Miss, proposed Civil Rights bill); LBJ (signed CRA 1964, VRA 1965, Fair Housing Act 1968)</li>
+      <li><strong>Judicial:</strong> Brown v. Board (1954); Loving v. Virginia (1967, struck down anti-miscegenation laws)</li>
+      <li><strong>Legislative:</strong> Civil Rights Act 1957 (weak); Civil Rights Act 1964 (landmark); Voting Rights Act 1965; Fair Housing Act 1968</li>
+    </ul></div>
+  </div>
+
+  <h3 class="sh">Spread of the Civil Rights Template</h3>
+  <div class="g2">
+    <div class="card ba"><h4>Chicano Movement</h4><p><strong>César Chávez and Dolores Huerta</strong> co-founded the United Farm Workers (UFW) — organized exploited agricultural laborers in California. Grape boycott (1965–70) was a national movement. "¡Sí Se Puede!" — "Yes We Can!" <strong>Reies López Tijerina</strong> led the Alianza Federal de Mercedes, demanding return of land stolen under Treaty of Guadalupe Hidalgo. <strong>Rodolfo "Corky" Gonzales</strong> founded the Crusade for Justice in Denver. <strong>La Raza Unida</strong> (José Ángel Gutiérrez) formed a third political party in South Texas. High school students in LA organized "blowouts" (walkouts) in 1968, demanding better conditions and Chicano teachers.</p></div>
+    <div class="card ba"><h4>Women's Liberation Movement</h4><p><strong>National Organization for Women (NOW)</strong> founded 1966 by Betty Friedan and others. Lobbied for Equal Rights Amendment, equal pay, reproductive rights. <strong>ERA</strong> passed Congress 1972 — ratified by 35 of needed 38 states; Phyllis Schlafly's STOP ERA campaign blocked it. <strong>Title IX (1972)</strong>: banned sex discrimination in education programs receiving federal funds — transformed women's sports. <strong>Roe v. Wade (1973)</strong>: legalized abortion nationwide. <strong>Ms. Magazine</strong> founded by Gloria Steinem 1972. Debate between liberal feminism (equal rights within system) and radical feminism (patriarchy must be dismantled).</p></div>
+    <div class="card ba"><h4>American Indian Movement (AIM)</h4><p>Founded Minneapolis 1968 by Dennis Banks and Clyde Bellecourt, initially to respond to police brutality against urban Indians. "Red Power." <strong>Trail of Broken Treaties</strong> (1972): caravan to Washington, occupied BIA building. <strong>Wounded Knee Occupation (1973)</strong>: 200 AIM members occupied Wounded Knee, SD (site of 1890 massacre) for 71 days, demanding treaty rights, investigation of corruption. Standoff with federal marshals. Demanded U.S. honor hundreds of broken treaties. FBI surveillance and prosecutions targeted AIM leadership.</p></div>
+    <div class="card ba"><h4>Gay Rights Movement (Stonewall)</h4><p>June 27–28, 1969: New York City police raided the Stonewall Inn (a gay bar in Greenwich Village). Patrons — including transgender women of color like Marsha P. Johnson and Sylvia Rivera — fought back. Spontaneous riots lasted several nights. Within months, Gay Liberation Front formed. Annual Gay Pride marches began on the anniversary. Before Stonewall, being gay was criminalized, pathologized (listed as mental disorder until 1973), and grounds for firing. Stonewall transformed a stigmatized population into a rights movement.</p></div>
+  </div>
+</div>
+
+<!-- ═══════════════ LBJ ═══════════════ -->
+<div class="section" id="lbj">
+  <h2>LBJ & The Great Society</h2>
+  <div class="banner">
+    <h3>The Peak of American Liberalism</h3>
+    <p>Lyndon Baines Johnson was a master legislative politician who had spent his career in Congress. After Kennedy's assassination, he used national grief and JFK's legacy — and his own extraordinary skills — to pass more legislation than any president since FDR. The 1964 election gave him a supermajority in Congress. But Vietnam consumed everything — and the conservative backlash he feared ("We have lost the South for a generation") came even faster than he expected.</p>
+  </div>
+
+  <h3 class="sh">The Great Society Programs</h3>
+  <div class="g3">
+    <div class="card bt"><h4>Civil Rights Act (1964)</h4><p>Banned discrimination in public accommodations (hotels, restaurants, theaters) and employment on the basis of race, color, religion, sex, or national origin. Created the Equal Employment Opportunity Commission (EEOC) to enforce employment provisions. "Sex" was added as a protected category by conservative Rep. Howard Smith — he thought it would kill the bill by making it ridiculous; instead it became a foundation for women's rights. LBJ used everything — personal pressure, parliamentary maneuver, JFK's memory — to overcome Southern Democratic filibuster (57 days).</p></div>
+    <div class="card bt"><h4>Voting Rights Act (1965)</h4><p>After Bloody Sunday at Selma, LBJ addressed Congress and used the movement's own words: "We shall overcome." The act outlawed literacy tests and poll taxes. Section 5 required states with histories of discrimination to get federal "preclearance" before changing voting laws. Federal registrars sent to Southern counties. Result: Black voter registration in Mississippi went from 6.7% to 59.8% within four years. One of the most effective laws in American history. Section 5 gutted by Supreme Court in Shelby County v. Holder (2013).</p></div>
+    <div class="card bt"><h4>Medicare & Medicaid (1965)</h4><p>Medicare: federal health insurance for Americans 65+. Medicaid: federal-state program for low-income Americans. Both signed by LBJ at Independence, Missouri with Harry Truman — who had tried and failed to pass universal health care in 1948 — watching. Largest expansion of the welfare state since Social Security. Fiercely opposed by the American Medical Association, which called it "socialized medicine." Today they cover 140+ million Americans.</p></div>
+    <div class="card bt"><h4>Elementary & Secondary Education Act (1965)</h4><p>First major federal aid to public K-12 education. Title I: funding for schools with high numbers of low-income students. Broke through decades of opposition from those who feared federal control of education or opposed aid to parochial schools. Reauthorized repeatedly — as No Child Left Behind (2001), then Every Student Succeeds Act (2015).</p></div>
+    <div class="card bt"><h4>War on Poverty</h4><p>Economic Opportunity Act (1964): Office of Economic Opportunity administered Head Start (early childhood education), Job Corps (job training for disadvantaged youth), VISTA (domestic Peace Corps), Community Action Programs (funded local antipoverty organizations). Controversial: Community Action Programs gave money to grassroots organizations that sometimes challenged local political machines — including Democratic ones. Critics from the right said it created dependency; critics from the left said it was inadequate and diverted by Vietnam.</p></div>
+    <div class="card bt"><h4>Other Great Society Laws</h4>
+    <ul>
+      <li>Immigration Act (1965) — abolished national-origins quotas</li>
+      <li>Voting Rights Act extensions (1970, 1975, 1982)</li>
+      <li>Fair Housing Act (1968) — banned housing discrimination</li>
+      <li>Higher Education Act (1965) — created student loans/grants</li>
+      <li>National Endowments for Arts & Humanities (1965)</li>
+      <li>Public Broadcasting Act (1967) — created PBS and NPR</li>
+      <li>Consumer protection laws, auto safety standards (Nader)</li>
+    </ul></div>
+  </div>
+
+  <h3 class="sh">1960s Elections</h3>
+  <div class="g2">
+    <div class="card bl"><h4>Election of 1964: LBJ vs. Goldwater</h4><p>Senator Barry Goldwater of Arizona ran as an unabashed conservative — voted against Civil Rights Act on states' rights grounds, suggested the U.S. should consider using tactical nuclear weapons in Vietnam. LBJ's "Daisy Ad" showed a girl counting petals, then a nuclear explosion — ran only once but was endlessly replayed. LBJ won 61.1% — the largest popular vote margin in history. Democrats gained 37 House seats and 2 Senate seats. The Goldwater campaign, though crushed, mobilized young conservative activists (including future Reagan operatives) and seeded the conservative movement. The South began voting Republican.</p></div>
+    <div class="card br"><h4>Election of 1968: The End of Liberal Dominance</h4><p>MLK assassinated April 4. RFK assassinated June 5 — shot moments after winning the California primary. Chicago DNC: Mayor Daley's police beat antiwar protesters in the streets, broadcast on live TV. Humphrey nominated without entering a single primary. George Wallace (American Independent Party, segregationist): won 46 Electoral votes, 13.5%. Nixon ran on "law and order" and a "secret plan" to end Vietnam. Nixon won 43.4% to Humphrey's 42.7% — a three-way race determined by Wallace pulling from Democrats. Beginning of the end of the New Deal coalition.</p></div>
+  </div>
+
+  <h3 class="sh">Vietnam Destroys the Great Society</h3>
+  <div class="card" style="border-left:3px solid var(--red-m); margin-bottom:1rem">
+    <h4>The "Guns and Butter" Trap</h4>
+    <p>LBJ tried to fund both the Great Society and the Vietnam War without raising taxes — fearing that a tax increase would cost him political support needed for domestic programs. The result was inflation. By 1968, the War on Poverty was being defunded to pay for Vietnam. The moral contradiction was even worse: LBJ was sending disproportionately Black and poor soldiers to die in Vietnam while telling them their country was working to address racial and economic injustice at home. MLK called the U.S. government "the greatest purveyor of violence in the world today" in his 1967 speech against the war. Tet Offensive (January 1968) proved that LBJ's optimistic war reports were lies. He chose not to run for re-election March 31, 1968.</p>
+  </div>
+
+  <h3 class="sh">Conservative Backlash & Increasing Partisanship</h3>
+  <div class="g3">
+    <div class="card bc"><h4>Religious Conservatives</h4><p>The Great Society's cultural permissiveness — toleration of birth control, civil rights for unmarried women, funding for sex education — mobilized evangelical Christians. Jerry Falwell Sr. founded the Moral Majority 1979. Pat Robertson's 700 Club. Roe v. Wade (1973) became the galvanizing issue. The religious right became the backbone of the Republican Party.</p></div>
+    <div class="card bc"><h4>The "Southern Strategy"</h4><p>Nixon and Republican strategist Kevin Phillips calculated that white Southern voters — traditionally Democratic since the Civil War — were now available to Republicans. They had abandoned the Democratic Party over civil rights. Nixon's appeal to "law and order" and opposition to busing for integration attracted them. By 1980, the solid Democratic South had become the solid Republican South — the most dramatic political realignment in modern American history.</p></div>
+    <div class="card bc"><h4>Left Critics</h4><p>The New Left critiqued the Great Society as tinkering at the edges of a fundamentally unjust system. The War on Poverty addressed symptoms, not causes (structural racism, capitalism's inequality). Vietnam revealed that the liberal state was not fundamentally different from conservatism when it came to imperialism and militarism. The Port Huron Statement (SDS, 1962) had already articulated this critique before the Great Society existed.</p></div>
+  </div>
+</div>
+
+<!-- ═══════════════ NIXON-CARTER ═══════════════ -->
+<div class="section" id="nx">
+  <h2>Nixon, Ford & Carter (1969–1981)</h2>
+
+  <h3 class="sh">Nixon's Presidency (1969–1974)</h3>
+  <div class="g2">
+    <div class="card bl"><h4>Southern Strategy & Silent Majority</h4><p>Nixon strategist Kevin Phillips wrote "The Emerging Republican Majority" (1969) — detailed how to build a GOP coalition from white Southerners, ethnic Catholics, and suburban whites alienated by Democratic support for civil rights and counterculture. Nixon's "Silent Majority" speech (November 1969) appealed to Americans who hadn't protested — the working-class and middle-class whites who resented the counterculture and antiwar protesters. "Law and order" coded racial resentment without explicit racism.</p></div>
+    <div class="card bl"><h4>Domestic Policy (Surprisingly Moderate)</h4><p>Nixon was more moderate domestically than his rhetoric suggested. Created EPA (1970). Signed Clean Air Act, Water Act, Endangered Species Act. Established OSHA. Proposed (but failed to pass) a guaranteed annual income (Family Assistance Plan). Imposed wage and price controls during stagflation. Ended the gold standard 1971 ("Nixon shock"). Started affirmative action in federal contracting. New Federalism: revenue sharing gave block grants to states — reduced federal categorical control.</p></div>
+    <div class="card bl"><h4>Opening of China (1972)</h4><p>Nixon and National Security Advisor Henry Kissinger secretly prepared a rapprochement with the People's Republic of China — which the U.S. had refused to recognize since 1949. Nixon visited Beijing February 1972, met with Mao Zedong. Strategic logic: create a wedge between China and USSR, make the Soviet Union more worried about its eastern flank and thus more cooperative with the U.S. Ended 23-year isolation. One of the great diplomatic achievements of the Cold War — made possible precisely because Nixon was an anti-communist who couldn't be accused of being soft.</p></div>
+    <div class="card bl"><h4>Détente & SALT I (1972)</h4><p>Kissinger's "realist" approach: manage the Cold War, accept permanent coexistence with communism, use trade and diplomacy to reduce tensions. SALT I (Strategic Arms Limitation Treaty, May 1972): first agreement to limit nuclear weapons. Froze numbers of ICBMs and submarine-launched ballistic missiles. Also negotiated the Anti-Ballistic Missile Treaty (limiting missile defense systems). Helsinki Accords (1975, signed by Ford): recognized postwar European borders; USSR agreed to respect human rights (which it immediately violated but gave dissidents a legal basis to demand).</p></div>
+    <div class="card bl"><h4>Vietnam: Vietnamization to Fall of Saigon</h4><p>Nixon promised "peace with honor." Vietnamization: withdraw U.S. troops while building up South Vietnamese forces. Troop levels fell from 543,000 to 50,000. Meanwhile, secretly expanded the war: bombing of Cambodia (1969–73), Laos. When leaks revealed the Cambodia bombing, Congress was furious. Invasion of Cambodia (April 1970) triggered Kent State. Paris Peace Accords (January 1973): ceasefire, U.S. troops withdraw, POWs released. Congress cut off funding for continued bombing. South Vietnam fell April 30, 1975 — after Nixon resigned. U.S. helicopters evacuating from rooftops became iconic image of American failure.</p></div>
+  </div>
+
+  <h3 class="sh">Watergate (1972–1974)</h3>
+  <div class="card" style="border-left:3px solid var(--red-m); margin-bottom:1rem">
+    <h4>The Scandal That Ended a Presidency — Full Account</h4>
+    <div class="tl" style="margin-top:0.75rem">
+      <div class="tl-item rt"><div class="tl-yr">June 17, 1972</div><h4>The Break-In</h4><p>Five men arrested breaking into Democratic National Committee headquarters at the Watergate hotel. Connected to Nixon's re-election campaign (CREEP — Committee to Re-Elect the President). Nixon's team paid $450,000 in hush money to the burglars.</p></div>
+      <div class="tl-item rt"><div class="tl-yr">1972–73</div><h4>Cover-Up Unravels</h4><p>Nixon won 1972 in a 49-state landslide (vs. McGovern). Washington Post reporters Woodward and Bernstein, guided by "Deep Throat" (FBI Deputy Director Mark Felt), traced the money. Senate Watergate Committee televised hearings riveted the nation. White House aide John Dean "turned" and testified Nixon directed the cover-up.</p></div>
+      <div class="tl-item rt"><div class="tl-yr">July 1973</div><h4>The Tapes Revealed</h4><p>Alexander Butterfield revealed that Nixon secretly taped all White House conversations. Special Prosecutor Archibald Cox subpoenaed the tapes. Nixon ordered Attorney General Elliot Richardson to fire Cox. Richardson resigned rather than comply. Deputy AG William Ruckelshaus also resigned. Solicitor General Robert Bork finally fired Cox — "Saturday Night Massacre." Public outrage enormous. Impeachment proceedings began.</p></div>
+      <div class="tl-item rt"><div class="tl-yr">July 1974</div><h4>Supreme Court & Impeachment Votes</h4><p>Supreme Court ruled 8-0 (including Nixon appointees): Nixon must turn over tapes (United States v. Nixon). House Judiciary Committee approved three articles of impeachment: obstruction of justice, abuse of power, contempt of Congress. "Smoking gun" tape showed Nixon ordered cover-up six days after the break-in.</p></div>
+      <div class="tl-item gt"><div class="tl-yr">August 9, 1974</div><h4>Resignation</h4><p>Nixon resigned — the only president to do so. Said farewell to White House staff: "Never be petty... always remember others may hate you but those who hate you don't win unless you hate them." Ford sworn in: "Our long national nightmare is over."</p></div>
+      <div class="tl-item"><div class="tl-yr">September 1974</div><h4>The Pardon & Legacy</h4><p>Ford pardoned Nixon for any crimes he might have committed as president — before any charges were filed. Public outrage cost Ford the 1976 election. Legacy of Watergate: collapse of trust in government. FISA Court created (1978). Campaign Finance Reform (FECA). Freedom of Information Act strengthened. The "-gate" suffix entered English for any political scandal.</p></div>
+    </div>
+  </div>
+
+  <h3 class="sh">Economic Crisis of the 1970s</h3>
+  <div class="g3">
+    <div class="card ba"><h4>End of Bretton Woods (1971)</h4><p>The Bretton Woods system (1944): all currencies pegged to the dollar; the dollar convertible to gold at $35/ounce. Worked fine when the U.S. dominated the world economy. By 1971, inflation (from Vietnam spending), trade deficits, and European economic recovery had overloaded the system. Nixon unilaterally ended dollar-gold convertibility — "Nixon Shock." Led to floating exchange rates, global currency volatility, and contributed to inflation.</p></div>
+    <div class="card ba"><h4>Stagflation</h4><p>Standard economic theory said inflation and unemployment moved in opposite directions (the Phillips Curve). The 1970s broke the model: high inflation AND high unemployment simultaneously. Causes: oil price shocks (OPEC 1973 and 1979), deficit spending from Vietnam and Great Society, end of gold standard. Neither increasing spending (to fight unemployment) nor raising interest rates (to fight inflation) worked cleanly without worsening the other. Carter appointed Paul Volcker as Fed Chair in 1979, who began raising interest rates sharply — eventually ending inflation but causing severe recession in 1981-82.</p></div>
+    <div class="card ba"><h4>OPEC Oil Crisis (1973 & 1979)</h4><p>1973: Arab OPEC nations embargoed oil to U.S. for supporting Israel in Yom Kippur War. Oil prices quadrupled overnight. Gas lines stretched for miles. "Odd-even" rationing by license plate. National speed limit lowered to 55 mph. Revealed dangerous dependence on foreign energy. 1979: Iranian Revolution disrupted Iranian oil production, causing second oil shock. Carter put solar panels on the White House (Reagan removed them). Both crises fueled inflation and recession and profoundly shaped 1970s politics.</p></div>
+  </div>
+
+  <h3 class="sh">Ford (1974–1977) & Carter (1977–1981)</h3>
+  <div class="g2">
+    <div class="card"><h4>Gerald Ford: Healing or Betrayal?</h4><p>Never won a national election — appointed VP under 25th Amendment after Spiro Agnew resigned (tax evasion), then became president when Nixon resigned. Decent man in an impossible position. Pardon of Nixon: granted "full, free, and absolute pardon" — meant to allow the country to move on; instead seen as a deal. WIN (Whip Inflation Now) buttons mocked as insufficient response to inflation. Oversaw Fall of Saigon. Lost 1976 to Carter by narrow margin. Survived two assassination attempts.</p></div>
+    <div class="card"><h4>Jimmy Carter: The Unlucky President</h4><p>Georgia governor, peanut farmer, Naval Academy graduate, born-again Christian. Outsider who ran against Washington corruption. Genuine intellect and integrity; poor politician who couldn't work with Congress. <strong>Successes:</strong> Camp David Accords (Begin and Sadat — Nobel Peace Prize for both). Panama Canal Treaty (returned canal, reduced Latin American resentment). Created Departments of Energy and Education. National energy policy. <strong>Failures:</strong> Stagflation. Iranian hostage crisis. Soviet invasion of Afghanistan. Grain embargo (hurt American farmers). "Malaise speech" (actually called "A Crisis of Confidence") — accurately diagnosed American spiritual crisis but was seen as blaming the public. Lost to Reagan in 49-state near-landslide.</p></div>
+  </div>
+
+  <h3 class="sh">Iranian Hostage Crisis (1979–1981)</h3>
+  <div class="card" style="border-left:3px solid var(--red-m); margin-bottom:1rem">
+    <p>The Shah of Iran (installed by CIA coup in 1953) fled the country in January 1979 as the Islamic Revolution swept Iran under Ayatollah Khomeini. Carter allowed the Shah into the U.S. for cancer treatment. November 4, 1979: Iranian students stormed the U.S. Embassy in Tehran and took 52 Americans hostage. Held for 444 days. Carter's response: froze Iranian assets, economic sanctions, diplomatic pressure — all failed. Rescue mission (Operation Eagle Claw, April 1980): catastrophic failure — helicopters malfunctioned in the desert, 8 soldiers died in an accident before reaching Tehran. Secretary of State Cyrus Vance resigned in protest. The hostages were released minutes after Ronald Reagan was inaugurated on January 20, 1981 — humiliating Carter one final time. Some historians suspect the Reagan campaign negotiated a deal to delay release ("October Surprise" — unproven but debated).</p>
+  </div>
+
+  <h3 class="sh">Continuing Civil Rights Issues (1970s)</h3>
+  <div class="g2">
+    <div class="card bp"><h4>Busing & White Backlash</h4><p>Federal courts ordered busing of students to integrate schools that remained segregated due to residential patterns. Northern cities exploded — Boston's 1974-75 busing crisis was particularly violent. White flight accelerated. Nixon opposed busing politically while courts enforced it. The backlash to busing revealed that many Northern whites who had supported Southern civil rights were unwilling to integrate their own schools and neighborhoods. "Not in my backyard" — racism was not just Southern.</p></div>
+    <div class="card bp"><h4>Affirmative Action Debates</h4><p>Regents of University of California v. Bakke (1978): Supreme Court ruled strict racial quotas in university admissions were unconstitutional, but race could be considered as one factor among many. Steelworkers v. Weber (1979): upheld voluntary affirmative action in private employment. These debates crystallized the "reverse discrimination" argument that became central to the conservative coalition.</p></div>
+  </div>
+</div>
+
+<!-- ═══════════════ FLUENCY FLASHCARDS ═══════════════ -->
+<div class="section" id="fl">
+  <h2>Fluency Flashcards</h2>
+  <p style="font-size:13px;color:var(--muted);margin-bottom:1.25rem">Click any term to reveal its definition. Know ALL of these cold — these are the terms you must be able to use fluently in essays and short answers.</p>
+  <div class="flu-grid" id="flu-grid"></div>
+</div>
+
+<!-- ═══════════════ DEEP FLUENCY ═══════════════ -->
+<div class="section" id="df">
+  <h2>Deep Fluency Facts</h2>
+  <p style="font-size:13px;color:var(--muted);margin-bottom:1.25rem">Each term with full context — what it is, why it happened, who was involved, and why it matters for APUSH. Click any term to expand it.</p>
+  <div class="dflu-list" id="dflu-list"></div>
+</div>
+
+<!-- ═══════════════ QUIZ ═══════════════ -->
+<div class="section" id="qz">
+  <h2>Practice Quiz</h2>
+  <p style="font-size:13px;color:var(--muted);margin-bottom:1rem">20 questions covering all Unit 8 topics. Each question includes an explanation after you answer.</p>
+  <div class="qprog" id="qprog"></div>
+  <div id="qcontainer"></div>
+  <div class="qnav">
+    <button onclick="nextQ()">Next →</button>
+    <button onclick="resetQ()">Reset quiz</button>
+    <span class="qscore-badge" id="qscore">0 / 0 correct</span>
+  </div>
+</div>
+
+</main>
+<script>
+const TABS = ['ov','cw','hf','pw','cr','lbj','nx','fl','df','qz'];
+function show(id) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  document.querySelectorAll('#mainnav button').forEach((b,i) => b.classList.toggle('active', TABS[i]===id));
+  window.scrollTo(0, 0);
+}
+
+// ── FLUENCY DATA ──────────────────────────────────────────
+const FLU = [
+  {t:"G.I. Bill",cat:"Domestic",c:"pb",d:"1944 Servicemen's Readjustment Act: veterans got college tuition, home loans, and job training. 8 million used college benefits. Created postwar middle class and drove suburbanization. Largely denied to Black veterans by discriminatory banks and universities."},
+  {t:"Korean War",cat:"Foreign Policy",c:"pt",d:"1950–53. North Korea invaded South. U.S. intervened under UN authorization. MacArthur fired for insubordination. Armistice at 38th parallel — Korea still divided. 36,000 American deaths. 'The Forgotten War.' First limited war — containment applied militarily."},
+  {t:"Truman Doctrine",cat:"Foreign Policy",c:"pt",d:"1947: U.S. will support free peoples resisting communist subjugation. Applied first to Greece and Turkey ($400M). Committed U.S. to global intervention against communism — a fundamental break from pre-WWII isolationism. Foundation of containment policy."},
+  {t:"Marshall Plan",cat:"Foreign Policy",c:"pt",d:"1948: $13.3 billion to rebuild Western Europe. Economic recovery as anti-communism. Soviets refused it. Hugely successful — prevented communist takeovers in France and Italy. One of the most successful foreign aid programs in history."},
+  {t:"McCarthyism",cat:"Domestic",c:"pr",d:"Senator Joseph McCarthy's reckless accusations of communist infiltration (1950–54). Named 'communists' in government with no evidence. Ruined hundreds of careers. Army-McCarthy Hearings (1954) exposed him on national TV. Censured by Senate. Died 1957. Term now means reckless accusation without evidence."},
+  {t:"Sunbelt",cat:"Domestic",c:"pa",d:"Southern and Southwestern states growing rapidly post-WWII due to air conditioning, defense industry jobs, and lower costs. Politically shifted power toward conservatism. Sunbelt migration accelerated Reagan's coalition. States: Florida, Texas, Arizona, California, Georgia."},
+  {t:"Brown v. Board",cat:"Civil Rights",c:"pc",d:"1954 Supreme Court: 'Separate educational facilities are inherently unequal.' Overturned Plessy v. Ferguson (1896). Thurgood Marshall argued for NAACP. Chief Justice Earl Warren wrote unanimous opinion. Triggered 'Massive Resistance' in the South. 10 years later only 2% of Southern Black students were in integrated schools."},
+  {t:"Vietnam War",cat:"Foreign Policy",c:"pt",d:"U.S. involvement 1954–75 in containment of North Vietnam. Gulf of Tonkin 1964 escalated U.S. involvement. Peak: 543,000 troops. Tet Offensive 1968 broke public support. Vietnamization under Nixon. Fall of Saigon April 30, 1975. 58,000 Americans and 2-3 million Vietnamese killed. Divided the nation and destroyed LBJ's presidency."},
+  {t:"Military-Industrial Complex",cat:"Domestic",c:"pa",d:"Eisenhower's farewell address (Jan. 1961) warned of the dangerous alliance between defense contractors, the military, and Congress that could distort policy toward perpetual war. Defense spending had grown from $13B to $50B after NSC-68. The warning has been cited ever since to critique endless military spending."},
+  {t:"Civil Rights Act 1964",cat:"Civil Rights",c:"pc",d:"Banned discrimination in public accommodations and employment based on race, color, religion, sex, national origin. Created EEOC. Title VII included sex (added by conservatives who thought it would kill the bill). Required 57-day Senate filibuster to overcome. LBJ told aide: 'We have lost the South for a generation.' Most significant rights legislation since Reconstruction."},
+  {t:"Great Society",cat:"Domestic",c:"pt",d:"LBJ's sweeping domestic agenda 1964–68: Medicare, Medicaid, Voting Rights Act, Civil Rights Act, War on Poverty (Head Start, Job Corps), Immigration Act, Elementary & Secondary Education Act, National Endowments for Arts & Humanities, Public Broadcasting. Passed with massive 1964 congressional majority. Peak of American liberalism. Undermined by Vietnam costs and conservative backlash."},
+  {t:"Immigration Act 1965",cat:"Domestic",c:"pp",d:"Hart-Celler Act: abolished 1924 national-origin quotas (which heavily favored Northern Europeans). Replaced with family reunification and skills preferences. Sponsors expected modest changes — immigration from Asia, Latin America, Africa exploded over next decades. One of the most consequential laws of the 20th century. Transformed U.S. demographics."},
+  {t:"Chicano Movement",cat:"Civil Rights",c:"pc",d:"Latino civil rights movement in the Southwest. César Chávez and Dolores Huerta's UFW organized farm workers; grape boycott 1965-70. Reies Tijerina demanded return of land stolen under Treaty of Guadalupe Hidalgo. Corky Gonzales founded Crusade for Justice. La Raza Unida political party. High school 'blowouts' in LA. 'Brown Power' and '¡Sí Se Puede!'"},
+  {t:"Black Panther Party",cat:"Civil Rights",c:"pc",d:"Founded Oakland 1966 by Huey Newton and Bobby Seale. Armed self-defense against police brutality. Ten-Point Program. Free breakfast for 10,000 children daily, free health clinics. FBI COINTELPRO infiltrated and destroyed organization — Fred Hampton killed in his bed in FBI-directed police raid, 1969. Symbol of Black Power movement."},
+  {t:"Stonewall",cat:"Civil Rights",c:"pp",d:"June 1969: NYC police raided the Stonewall Inn. Patrons — including trans women of color Marsha P. Johnson and Sylvia Rivera — fought back. Several nights of riots. Gay Liberation Front formed. Annual Pride marches began on the anniversary. Before Stonewall, homosexuality was criminalized and psychiatrically pathologized. Launched the modern LGBTQ+ rights movement."},
+  {t:"Détente",cat:"Foreign Policy",c:"pt",d:"Nixon/Kissinger policy of easing Cold War tensions through engagement rather than confrontation. SALT I (1972). Opening of China (1972). Helsinki Accords (1975). Controversial among conservatives. Ended when Soviets invaded Afghanistan (1979). Based on 'realist' assumption that the U.S. must manage rather than defeat communism."},
+  {t:"EPA",cat:"Domestic",c:"pg",d:"Environmental Protection Agency, created by Nixon via executive order in 1970. Preceded by Rachel Carson's Silent Spring (1962), First Earth Day (April 22, 1970), Santa Barbara oil spill, Cuyahoga River fire. Nixon also signed Clean Air Act, Clean Water Act, Endangered Species Act. Ironic that the most significant environmental regulation came from a Republican president."},
+  {t:"ERA",cat:"Civil Rights",c:"pp",d:"Equal Rights Amendment: 'Equality of rights under the law shall not be denied or abridged by the United States or by any State on account of sex.' Passed Congress 1972. Required 38 states by 1979 (extended to 1982). Got 35 of 38. Phyllis Schlafly's STOP ERA campaign successfully blocked it by warning it would require women in combat, eliminate protective labor laws, and create unisex bathrooms."},
+  {t:"War Powers Act 1973",cat:"Domestic",c:"pr",d:"Passed over Nixon's veto. Required president to: (1) notify Congress within 48 hours of deploying troops; (2) obtain congressional approval within 60 days or withdraw. Response to Vietnam and Nixon's secret bombing of Cambodia. Every president since has disputed its constitutionality but partially complied. Represents Congress reasserting its constitutional war powers."},
+  {t:"Roe v. Wade",cat:"Domestic",c:"pr",d:"1973 Supreme Court 7-2: right to abortion protected under 14th Amendment's due process 'privacy' rights. Established trimester framework. Galvanized religious right as single most important political issue. Polarized American politics for 50 years. Overturned by Dobbs v. Jackson Women's Health Organization in June 2022, returning issue to states."},
+  {t:"OPEC",cat:"Foreign Policy",c:"pa",d:"Organization of Petroleum Exporting Countries. 1973 embargo: Arab members cut exports to U.S. for supporting Israel in Yom Kippur War — oil prices quadrupled. 1979 second shock from Iranian Revolution. Long gas lines, inflation, recession. Revealed dangerous U.S. dependence on foreign energy. Shaped Carter's entire domestic and foreign policy agenda."},
+  {t:"Watergate",cat:"Domestic",c:"pr",d:"June 1972: Nixon campaign operatives broke into DNC HQ. Nixon paid hush money, obstructed justice, used IRS/CIA/FBI to punish enemies. Senate hearings, White House tapes, Saturday Night Massacre. Supreme Court ordered tapes released. Nixon resigned August 9, 1974 — only president to resign. Ford pardoned him. Collapse of trust in government. '-gate' suffix entered language."},
+  {t:"Iranian Hostage Crisis",cat:"Foreign Policy",c:"pr",d:"November 1979: Iranian students seized U.S. Embassy, held 52 Americans 444 days. Triggered by Carter allowing deposed Shah into U.S. for medical care. Failed rescue mission (Eagle Claw, April 1980) killed 8 soldiers. Released minutes after Reagan inaugurated Jan. 20, 1981. Destroyed Carter's presidency. Long-lasting rupture in U.S.-Iran relations."},
+];
+
+function buildFlu() {
+  const g = document.getElementById('flu-grid');
+  FLU.forEach(f => {
+    const d = document.createElement('div');
+    d.className = 'flu';
+    d.innerHTML = `<div class="fcat"><span class="pill ${f.c}">${f.cat}</span></div><div class="ft">${f.t}</div><div class="fd">${f.d}</div><div class="fh">tap to reveal</div>`;
+    d.onclick = () => d.classList.toggle('open');
+    g.appendChild(d);
+  });
+}
+
+// ── DEEP FLUENCY DATA ─────────────────────────────────────
+const DFLU = [
+  {
+    t:"G.I. Bill (1944)",cat:"Domestic Policy",c:"pb",
+    def:"The Servicemen's Readjustment Act of 1944 provided WWII veterans with college tuition, low-interest home loans, unemployment benefits, and vocational training.",
+    context:"16 million Americans served in WWII. FDR feared a return to Great Depression-era unemployment when they came home — he wanted to prevent social unrest and reward service. The GI Bill was crafted in 1944 to ease the transition.",
+    impact:[
+      "8 million veterans attended college — universities had to build new campuses overnight",
+      "Created a massive new suburban middle class through home loan benefits",
+      "Veterans who had loan access moved to Levittowns and new suburbs",
+      "Black veterans were largely denied benefits — banks refused loans, Southern universities denied admission, creating a two-tiered postwar prosperity that widened the racial wealth gap",
+      "Direct cause of the Baby Boom (young couples with homes started families)",
+      "Long-term: fueled the consumer economy of the 1950s and created the college-educated workforce that sustained postwar prosperity"
+    ],
+    exam:"Why does the GI Bill matter for Unit 8? It's the single law most responsible for postwar prosperity, suburbanization, the baby boom, and — through its racial exclusion — the persistence of the racial wealth gap that the Civil Rights Movement was fighting."
+  },
+  {
+    t:"Truman Doctrine (1947)",cat:"Foreign Policy",c:"pt",
+    def:"President Truman's 1947 declaration that the United States would provide political, military, and economic support to all democratic nations under threat of communist expansion.",
+    context:"Greece was fighting a communist insurgency; Turkey was under Soviet pressure for territory and access to the Bosphorus. Britain, exhausted and broke from WWII, informed the U.S. it could no longer support Greece and Turkey. Truman asked Congress for $400 million in aid.",
+    impact:[
+      "Established the principle that the U.S. had a global obligation to fight communism anywhere — regardless of strategic significance",
+      "Broke from American tradition of non-intervention and 'no entangling alliances'",
+      "Applied to Greece and Turkey immediately; implicitly justified all future interventions (Korea, Vietnam, Guatemala, Iran)",
+      "Together with the Marshall Plan, NATO, and NSC-68, formed the architecture of Cold War strategy"
+    ],
+    exam:"The Truman Doctrine is the ideological statement of containment. Every subsequent Cold War intervention — Korea, Vietnam, Guatemala — invoked its logic."
+  },
+  {
+    t:"Marshall Plan (1948)",cat:"Foreign Policy",c:"pt",
+    def:"A U.S. program providing $13.3 billion (roughly $150 billion today) to rebuild war-devastated Western European economies after WWII.",
+    context:"Secretary of State George Marshall proposed the plan in a June 1947 Harvard speech. The logic: poverty and desperation breed communism. Western European economies — especially France, Italy, and West Germany — were in ruins. Communist parties were gaining strength in France and Italy through legitimate elections. The U.S. offered aid to ALL European nations, including the USSR. Stalin refused and forced Eastern Europe to refuse — which revealed Soviet intentions clearly.",
+    impact:[
+      "Western Europe recovered economically — the 'economic miracle' of the 1950s",
+      "Prevented communist electoral victories in France and Italy",
+      "Rebuilt West Germany, which became NATO's front line",
+      "Created lasting goodwill toward the U.S. in Western Europe",
+      "Established the model of economic aid as foreign policy tool",
+      "The Soviets' refusal hardened the division of Europe"
+    ],
+    exam:"Know that the Marshall Plan was both humanitarian and strategic — it rebuilt Europe AND prevented communist takeovers. It's the clearest example of the 'economic dimension' of containment."
+  },
+  {
+    t:"McCarthyism",cat:"Cold War at Home",c:"pr",
+    def:"The practice of making unsubstantiated accusations of communist subversion, associated with Senator Joseph McCarthy of Wisconsin who made sweeping claims of communist infiltration from 1950–1954.",
+    context:"The Second Red Scare was triggered by real events: Soviets tested atomic bomb (1949), China fell to communism (1949), Alger Hiss convicted (1950), Rosenbergs arrested (1950), Korean War began (1950). McCarthy gave a speech in Wheeling, WV, in February 1950 claiming to have a list of 205 communists in the State Department. He had no such list, but the accusation worked politically.",
+    impact:[
+      "Hundreds of government employees, academics, and entertainers lost jobs based on association, not evidence",
+      "Hollywood Blacklist destroyed careers of writers, directors, and actors",
+      "HUAC (House Un-American Activities Committee) used 'Are you now or have you ever been...' as a weapon",
+      "Chilled free speech and political dissent for years",
+      "Army-McCarthy Hearings (1954) exposed him on national TV: 'Have you no sense of decency?'",
+      "Senate censured McCarthy 67-22, December 1954. He died in 1957.",
+      "The 'Lavender Scare' — gay people were targeted as security risks — ran parallel to McCarthyism"
+    ],
+    exam:"McCarthyism shows how Cold War fear could be weaponized domestically against civil liberties. It also reveals how conservatism used anti-communism to attack liberals — calling any reform 'socialist.'"
+  },
+  {
+    t:"Korean War (1950–1953)",cat:"Foreign Policy",c:"pt",
+    def:"A military conflict in which U.S.-led United Nations forces defended South Korea against an invasion by communist North Korea, backed by China and the Soviet Union.",
+    context:"Korea was divided at the 38th parallel after WWII — Soviet-backed communists in the North, U.S.-backed government in the South. June 25, 1950: North Korea invaded. Truman intervened without a congressional declaration of war — calling it a 'police action.' MacArthur's forces pushed North Korea to the Chinese border, triggering Chinese intervention with 300,000 troops.",
+    impact:[
+      "MacArthur publicly called for attacking China and using nuclear weapons — Truman fired him for insubordination, asserting civilian control of the military",
+      "Armistice signed July 1953 near the original 38th parallel border — no peace treaty, technically the war never ended",
+      "36,000 American deaths; 2 million+ Korean deaths",
+      "NSC-68 defense buildup justified — military spending quadrupled",
+      "Established the 'limited war' precedent — fighting without the goal of total victory",
+      "Set the template for future containment wars where the U.S. couldn't fully win without risking nuclear escalation"
+    ],
+    exam:"Korea established the 'limited war' concept — fight to contain, not to win totally. This frustrated the public and military (see MacArthur). This same dynamic reappeared in Vietnam."
+  },
+  {
+    t:"Brown v. Board of Education (1954)",cat:"Civil Rights",c:"pc",
+    def:"The unanimous Supreme Court decision declaring racial segregation in public schools unconstitutional, overturning Plessy v. Ferguson's 'separate but equal' doctrine.",
+    context:"NAACP Legal Defense Fund under Thurgood Marshall had spent two decades systematically challenging segregation in graduate and professional schools. Brown combined five cases from Kansas, South Carolina, Virginia, Delaware, and D.C. Marshall argued that segregation itself caused psychological harm — used Kenneth Clark's 'doll test' showing Black children preferred white dolls as evidence. Chief Justice Earl Warren (Eisenhower appointee — Ike called the appointment 'the biggest damn-fool mistake I ever made') wrote a unanimous opinion.",
+    impact:[
+      "Massive Resistance: 101 Southern congressmen signed the 'Southern Manifesto' pledging to resist",
+      "Eisenhower sent 101st Airborne to Little Rock (1957) to enforce integration — reluctantly",
+      "10 years after Brown, only 2% of Southern Black students were in integrated schools",
+      "White Citizens' Councils formed across South — 'respectable' segregationist resistance",
+      "Energized the civil rights movement by proving federal courts could be allies",
+      "Led directly to the Civil Rights Movement's next phase — direct action, since courts alone were insufficient"
+    ],
+    exam:"Brown was a legal landmark that couldn't enforce itself. This is the key lesson: legal victories required social movement pressure AND executive enforcement AND legislative action to become real."
+  },
+  {
+    t:"Vietnam War",cat:"Foreign Policy",c:"pt",
+    def:"A Cold War proxy conflict (1954–1975) in which the U.S. supported South Vietnam against communist North Vietnam, ending in American withdrawal and North Vietnamese victory.",
+    context:"Vietnam had been fighting French colonialism for decades. Ho Chi Minh was communist but also a Vietnamese nationalist — his movement's primary goal was independence. U.S. supported France, then South Vietnam, fearing a 'domino effect' if Vietnam fell to communism. Gulf of Tonkin Resolution (1964): after dubious reports of North Vietnamese attacks on U.S. ships, Congress gave LBJ virtually unlimited war authority (passed 88-2).",
+    impact:[
+      "Peak 543,000 U.S. troops in 1968; 58,220 Americans killed; 2–3 million Vietnamese",
+      "Tet Offensive (January 1968): military failure for North Vietnam but political disaster for LBJ — Walter Cronkite's on-air editorial turned public opinion",
+      "LBJ declined to seek re-election, March 1968",
+      "Kent State (1970): National Guard killed 4 students at antiwar protest",
+      "War Powers Act (1973): Congress reasserted its constitutional role",
+      "Fall of Saigon (April 30, 1975): U.S. helicopters on rooftops, South Vietnam fell",
+      "Legacy: 'Vietnam Syndrome' — public reluctance to commit troops abroad; mistrust of government"
+    ],
+    exam:"Vietnam is central to understanding everything that happened 1965–1975: it destroyed LBJ's presidency, split the Democratic Party, fueled the counterculture and antiwar movement, led to Nixon's Southern Strategy, and created lasting public cynicism toward government."
+  },
+  {
+    t:"Military-Industrial Complex",cat:"Cold War at Home",c:"pa",
+    def:"President Eisenhower's term for the politically powerful alliance between defense contractors, the U.S. military, and members of Congress who supported defense spending — and his warning about its dangers.",
+    context:"Eisenhower was uniquely credible to make this warning — he had spent his career as a general. His January 17, 1961 farewell address (three days before JFK's inauguration) was carefully drafted. Defense spending had exploded from $13B in 1950 to $53B by 1960. Huge corporations (Lockheed, Boeing, General Dynamics) depended on defense contracts; members of Congress competed for contracts for their districts; the military wanted its programs funded.",
+    impact:[
+      "Established a framework for critiquing the permanent war economy",
+      "Defense spending never returned to pre-Cold War levels",
+      "The MIC continued to grow — providing jobs, campaign donations, and political cover for expanded military budgets",
+      "Anti-Vietnam movement frequently invoked Eisenhower's warning",
+      "Pentagon Papers, Seymour Hersh's reporting on war crimes, showed how the MIC operated in practice"
+    ],
+    exam:"The MIC concept explains why the Cold War military buildup became self-perpetuating. It also creates tension with Eisenhower's image as a conservative — he's warning about the very forces his Cold War policies helped create."
+  },
+  {
+    t:"Civil Rights Act of 1964",cat:"Civil Rights",c:"pc",
+    def:"Landmark federal legislation banning discrimination in public accommodations and employment based on race, color, religion, sex, or national origin, and creating the EEOC.",
+    context:"Kennedy sent a civil rights bill to Congress after Birmingham (1963). After Kennedy's assassination, LBJ pushed it with relentless pressure. Southern Democrats filibustered for 57 days — the longest filibuster in Senate history. LBJ needed Republican votes to break it. Republican Senate Minority Leader Everett Dirksen ultimately delivered them. Title VII (employment) included sex as a protected category — added by Virginia segregationist Howard Smith, who thought it would make the bill ridiculous; it became the foundation of women's workplace rights.",
+    impact:[
+      "EEOC received 9,000 complaints in its first year",
+      "Title VII used by women to challenge workplace discrimination",
+      "Public accommodations provisions immediately desegregated hotels, restaurants, theaters across South",
+      "Southern Democrats (Dixiecrats) began migrating to Republican Party",
+      "LBJ reportedly said: 'We have lost the South for a generation' — actually, permanently"
+    ],
+    exam:"The Civil Rights Act shows the interplay of all three branches: judicial (Brown), executive (LBJ's leadership), legislative (overcoming filibuster). Also note Title VII — women's employment rights are hidden inside a race discrimination law."
+  },
+  {
+    t:"Great Society",cat:"Domestic Policy",c:"pt",
+    def:"LBJ's sweeping domestic program (1964–68) addressing poverty, discrimination, education, healthcare, and other social problems — the most ambitious expansion of the welfare state since the New Deal.",
+    context:"LBJ had spent his career in Congress and knew how to pass legislation. The 1964 landslide gave Democrats 68 Senate seats and 295 House seats. LBJ drove legislation through with extraordinary personal pressure — calling senators at night, meeting with them in the Oval Office, using every tool of persuasion and arm-twisting. He understood that the window would close — and it did, as Vietnam consumed his presidency.",
+    impact:[
+      "Medicare and Medicaid: now cover 140+ million Americans",
+      "Elementary and Secondary Education Act: first federal K-12 aid",
+      "Voting Rights Act: transformed Southern politics within years",
+      "Immigration Act: transformed U.S. demographics over decades",
+      "War on Poverty: poverty rate fell from 19% (1964) to 12% (1969)",
+      "Conservative backlash: the Great Society is what conservatives have been trying to dismantle ever since Reagan",
+      "Vietnam drained resources and political capital — programs inadequately funded"
+    ],
+    exam:"The Great Society is the peak of liberalism. Understanding it is essential to understanding everything after — the conservative backlash, Reagan's goal to roll it back, the ongoing debates about the welfare state."
+  },
+  {
+    t:"Immigration Act of 1965",cat:"Domestic Policy",c:"pp",
+    def:"The Hart-Celler Act abolished the national-origins quota system and replaced it with preferences for family reunification and skills, dramatically changing the sources of immigration to the U.S.",
+    context:"The 1924 Immigration Act (Johnson-Reed Act) had established quotas heavily favoring Northern and Western Europeans and effectively barring most Asian immigration. By 1965, this was seen as embarrassing in the context of the civil rights movement and Cold War competition for non-aligned nations' loyalty. President Johnson signed it at the foot of the Statue of Liberty. Supporters predicted modest changes — they were completely wrong.",
+    impact:[
+      "Immigration from Asia, Latin America, Africa, and the Caribbean exploded within a decade",
+      "Created the Asian American and revitalized Latino communities that transformed American cities",
+      "By 2000, the U.S. was 12% Latino, 4% Asian — categories barely registered in 1965",
+      "Transformed American food, culture, religion, politics, and demographics",
+      "Created the immigration controversies that have defined politics ever since",
+      "Combined with the Voting Rights Act, helped create a multiracial Democratic coalition"
+    ],
+    exam:"The Immigration Act is one of the most consequential laws of the 20th century — with effects that grew over decades. Link it to the Chicano movement (Latino immigration), Asian American movement, and the demographic transformation of the country."
+  },
+  {
+    t:"Chicano Movement",cat:"Civil Rights",c:"pc",
+    def:"A civil rights and cultural movement among Mexican Americans (primarily) in the 1960s–70s demanding equal rights, cultural recognition, and political power.",
+    context:"Mexican Americans had faced decades of discrimination in the Southwest — segregated schools, exclusion from juries, underpaid agricultural labor. The Civil Rights Movement provided both inspiration and a template. The word 'Chicano' (from 'Mexicano') was reclaimed as a term of pride. César Chávez and Dolores Huerta — both deeply influenced by Gandhi and MLK — organized the United Farm Workers starting in 1962.",
+    impact:[
+      "UFW grape boycott (1965–70): millions of Americans refused to buy California grapes; farmworkers won contracts",
+      "Student walkouts ('blowouts') at East LA high schools 1968 — 15,000 students protested inadequate schools",
+      "La Raza Unida: political party that won local offices in South Texas",
+      "Brown Berets: paramilitary organization similar in structure to Black Panthers",
+      "Reies Tijerina's Alianza: stormed a courthouse in New Mexico 1967 to assert land grant claims",
+      "Inspired the development of Chicano Studies in universities"
+    ],
+    exam:"Know César Chávez and UFW especially. The Chicano Movement shows how the Civil Rights template spread and how farmworkers — invisible to most Americans — built power through labor organizing."
+  },
+  {
+    t:"Black Panther Party",cat:"Civil Rights",c:"pc",
+    def:"A Black revolutionary socialist organization founded in Oakland in 1966 that advocated armed self-defense against police brutality and operated community social programs.",
+    context:"Founded by Huey Newton and Bobby Seale in October 1966 in Oakland, CA — a city with a long history of police brutality against Black residents. The Panthers' original purpose was to monitor police patrols. They openly carried guns (legal in California at the time). Their Ten-Point Program demanded full employment, decent housing, Black exemption from military service, and an end to police brutality. The California legislature passed a gun control law specifically to disarm them.",
+    impact:[
+      "Free Breakfast for School Children: fed 10,000 children daily across the country — inspired federal school breakfast program",
+      "Free health clinics in 13 cities",
+      "FBI Director Hoover called them 'the greatest threat to internal security of the country'",
+      "COINTELPRO: FBI infiltrated the Panthers, planted evidence, organized assassinations of leaders",
+      "Fred Hampton, 21-year-old Chicago chairman, killed in his bed in an FBI-directed police raid, December 1969",
+      "By 1970, nearly every Panther leader was dead, imprisoned, or in exile",
+      "Their social programs influenced later community organizing"
+    ],
+    exam:"The Black Panthers show both the militancy of Black Power and how the federal government used illegal tactics to destroy radical organizations. The contrast between their demonization and their actual community programs is important."
+  },
+  {
+    t:"Stonewall",cat:"Civil Rights",c:"pp",
+    def:"The 1969 riots at the Stonewall Inn gay bar in New York City that sparked the modern LGBTQ+ rights movement.",
+    context:"In 1969, homosexuality was illegal in most states, classified as a mental disorder by the American Psychiatric Association, grounds for firing from government jobs, and socially stigmatized. Police regularly raided gay bars — arrests were published in newspapers, destroying lives. The Stonewall Inn was a Mafia-owned bar that paid off police. June 27–28, 1969: police raided Stonewall. This time patrons — including transgender women of color Marsha P. Johnson and Sylvia Rivera — fought back. Spontaneous riots continued for several nights.",
+    impact:[
+      "Gay Liberation Front formed within weeks",
+      "Demand for rights (not just tolerance) replaced earlier homophile organizations' quiet assimilation approach",
+      "Annual marches began on the anniversary — became Pride parades worldwide",
+      "American Psychiatric Association removed homosexuality from its list of disorders in 1973",
+      "Within a decade, openly gay politicians won office (Harvey Milk, San Francisco, 1977)"
+    ],
+    exam:"Stonewall shows how a single act of resistance can become a movement's founding moment. Note that it was initiated by transgender women of color — the most marginalized within the marginalized. Connect to the broader pattern of identity movements in this era."
+  },
+  {
+    t:"Détente",cat:"Foreign Policy",c:"pt",
+    def:"Nixon and Kissinger's policy of easing Cold War tensions through diplomatic engagement, arms limitation, and recognition of the status quo in global power competition.",
+    context:"Henry Kissinger, Nixon's National Security Advisor and later Secretary of State, was a 'realist' — he believed U.S. foreign policy should be based on power and interests, not ideology or morality. Rather than trying to roll back communism (which risked nuclear war) or waiting for it to collapse (which could take forever), détente sought to manage the competition, reduce risks, and use trade and diplomacy to create incentives for good behavior.",
+    impact:[
+      "SALT I (1972): limited ICBMs and submarine-launched missiles — first nuclear arms control agreement",
+      "Anti-Ballistic Missile Treaty (1972): limited missile defense (which could undermine deterrence)",
+      "Opening of China (1972): ended 23-year U.S. non-recognition, drove wedge between China and USSR",
+      "Helsinki Accords (1975, Ford): recognized European borders; USSR agreed to respect human rights",
+      "SALT II (1979, Carter): further limits on nuclear weapons — Senate never ratified; Soviet invasion of Afghanistan ended détente",
+      "Conservative critics (Reagan, Buckley): détente 'legitimized' communism and accepted Soviet gains"
+    ],
+    exam:"Détente represents one approach to the Cold War — engagement over confrontation. Compare it to the Truman Doctrine's confrontational approach. Reagan abandoned détente for a more aggressive strategy. Know SALT I specifically."
+  },
+  {
+    t:"EPA",cat:"Domestic Policy",c:"pg",
+    def:"The Environmental Protection Agency, created by President Nixon in December 1970 to consolidate federal environmental programs and enforce environmental regulations.",
+    context:"The late 1960s saw a series of environmental disasters that shocked the public: the 1969 Santa Barbara oil spill (200,000 gallons, blackened beaches), the Cuyahoga River in Cleveland catching fire (not for the first time — had happened multiple times since 1868). Rachel Carson's Silent Spring (1962) had documented DDT's devastation of bird populations. Earth Day, April 22, 1970: 20 million Americans participated — the largest mass demonstration in U.S. history. Nixon, sensing political opportunity, created EPA by executive order.",
+    impact:[
+      "Clean Air Act (1970): standards for air pollutants",
+      "Clean Water Act (1972): 'fishable and swimmable' goal for all waters by 1983",
+      "Endangered Species Act (1973): protected species and their habitats",
+      "DDT banned (1972)",
+      "Lead removed from gasoline (gradual, 1970s–80s)",
+      "Superfund program (1980): cleanup of toxic waste sites",
+      "Nixon's environmental record is ironic given his other priorities"
+    ],
+    exam:"The EPA is one of Nixon's lasting domestic legacies — and one of the most ironic, given that later Republican presidents tried to weaken it. The environmental movement and EPA grew out of specific disasters (Cuyahoga, Santa Barbara) and Rachel Carson's work."
+  },
+  {
+    t:"ERA",cat:"Civil Rights",c:"pp",
+    def:"The Equal Rights Amendment: 'Equality of rights under the law shall not be denied or abridged by the United States or by any State on account of sex.' Passed Congress 1972 but failed to be ratified by the required 38 states.",
+    context:"ERA was first proposed in 1923. By 1972, the women's movement had sufficient strength to push it through Congress (84-8 in Senate, 354-24 in House). Ratification deadline was 1979, extended to 1982. 35 states ratified (3 short of 38 needed). Phyllis Schlafly's STOP ERA campaign argued it would require women in combat, eliminate alimony and divorce protections, create unisex bathrooms, and force women into the workforce against their will. Her unlikely alliance of conservatives defeated a constitutional amendment that had broad public support.",
+    impact:[
+      "Failure energized the women's movement around specific legislation (Title IX, Pregnancy Discrimination Act) rather than a constitutional approach",
+      "Schlafly's success made her a hero to the conservative movement and demonstrated its organizational power",
+      "Three more states ratified in 2017–2020 (38 total), but the deadline issue remains legally contested",
+      "The ERA fight revealed deep divisions among women about feminism's goals"
+    ],
+    exam:"The ERA shows that constitutional amendments require supermajority consensus that most rights claims can't achieve — which is why the women's movement pivoted to legislation and litigation. Schlafly's STOP ERA campaign is the model for conservative grassroots organizing."
+  },
+  {
+    t:"War Powers Act (1973)",cat:"Domestic Policy",c:"pr",
+    def:"A federal law passed over Nixon's veto requiring the president to notify Congress within 48 hours of committing U.S. armed forces to military action and to withdraw them within 60 days without congressional authorization.",
+    context:"Congress passed this in reaction to two things: (1) LBJ's escalation of Vietnam based on the Gulf of Tonkin Resolution (which Congress later learned was based on a fabricated incident), and (2) Nixon's secret bombing of Cambodia without congressional knowledge. For years, presidents had used commander-in-chief powers to commit troops without declarations of war — technically legal but clearly expanding executive power at Congress's expense.",
+    impact:[
+      "Every president since Nixon has submitted a formal notification when deploying troops, but none has acknowledged the act's constitutionality",
+      "Presidents have generally claimed the 60-day clock doesn't start until they report under the act's specific provisions",
+      "Has been largely ineffective at limiting presidential war powers in practice",
+      "Represents Congress's attempt to restore the constitutional balance after Vietnam",
+      "The act has been invoked or challenged in: Grenada, Haiti, Kosovo, Libya, and other interventions"
+    ],
+    exam:"The War Powers Act shows Congress reasserting power after Vietnam — but also shows how executive power, once expanded, is hard to reduce. No president has obeyed it fully; no Congress has enforced it with funding cutoffs."
+  },
+  {
+    t:"Roe v. Wade (1973)",cat:"Domestic Policy",c:"pr",
+    def:"The Supreme Court decision ruling 7-2 that the Constitution's due process clause protected a woman's right to an abortion, invalidating most state laws restricting abortion.",
+    context:"Texas law banned abortion except to save the mother's life. Jane Roe (Norma McCorvey) challenged it with attorney Sarah Weddington. Justice Harry Blackmun wrote the majority opinion, grounding the right to abortion in the 14th Amendment's 'liberty' and privacy rights established in Griswold v. Connecticut (1965). The decision created a trimester framework: first trimester unrestricted, second trimester regulated for maternal health, third trimester states could ban abortion.",
+    impact:[
+      "Immediately struck down abortion laws in 46 states",
+      "Galvanized the religious right as no other issue had — became the single most powerful organizing issue for conservative Christians",
+      "Led to the formation of the Moral Majority (1979), Christian Coalition",
+      "Reshaped judicial confirmation politics — 'litmus test' for Supreme Court nominees",
+      "Modified by Planned Parenthood v. Casey (1992), which replaced the trimester framework with 'viability' standard",
+      "Overturned by Dobbs v. Jackson Women's Health Organization (June 2022), returning issue to states"
+    ],
+    exam:"Roe is both a civil rights case (women's autonomy) and a catalyst for the conservative movement. Its political legacy may be more important than its legal legacy. The fact that it was decided 7-2 by a court with 6 Republican appointees shows how much the politics have shifted."
+  },
+  {
+    t:"OPEC",cat:"Foreign Policy",c:"pa",
+    def:"Organization of the Petroleum Exporting Countries. The 1973 Arab oil embargo and 1979 Iranian Revolution-triggered oil shock created energy crises that transformed U.S. domestic and foreign policy.",
+    context:"1973: Egypt and Syria attacked Israel on Yom Kippur (the holiest day of the Jewish calendar). The U.S. airlifted weapons to Israel. Arab OPEC members — Saudi Arabia, Libya, UAE, and others — imposed an oil embargo on the U.S. and Netherlands. Oil prices went from $3/barrel to $12/barrel overnight. 1979: Iranian Revolution disrupted Iranian production; oil went from $13 to $34/barrel.",
+    impact:[
+      "Long gas lines; 'odd-even' rationing by license plate number",
+      "National speed limit lowered to 55 mph (fuel conservation)",
+      "Contributed to stagflation — energy costs drove inflation throughout the economy",
+      "Ford's Project Independence; Carter's energy policy (solar panels on White House)",
+      "Led to the Arab-Israeli peace process: Camp David Accords (1978)",
+      "Alaska Pipeline built; nuclear power briefly revived",
+      "Long-term: American car industry damaged by Japanese fuel-efficient imports (Honda, Toyota)",
+      "Revealed the vulnerability of a car-dependent, oil-consuming economy"
+    ],
+    exam:"OPEC connects foreign policy (U.S.-Israel-Arab relations), domestic economy (stagflation), and energy policy. It's one reason Carter was seen as ineffective — he couldn't solve a problem partly caused by U.S. Middle East policy going back to the 1950s."
+  },
+  {
+    t:"Watergate",cat:"Domestic Policy",c:"pr",
+    def:"The 1972–1974 political scandal in which President Nixon's administration covered up the break-in of Democratic National Committee headquarters, leading to Nixon's resignation.",
+    context:"CREEP (Committee to Re-Elect the President) operatives broke into the DNC at the Watergate hotel on June 17, 1972. Nixon was ahead in the polls and didn't need the information — the break-in was part of a broader 'dirty tricks' operation. Nixon's involvement was not in the break-in but in the cover-up — paying hush money, using the CIA to obstruct the FBI investigation. Washington Post reporters Woodward and Bernstein, guided by anonymous source 'Deep Throat' (later revealed as FBI Deputy Director Mark Felt), kept the story alive.",
+    impact:[
+      "Nixon became the only president to resign",
+      "Ford's pardon of Nixon cost Ford the 1976 election",
+      "Congressional investigations revealed the 'plumbers,' the enemies list, abuse of IRS and FBI",
+      "Church Committee (1975) revealed illegal CIA and FBI programs (assassinations, COINTELPRO, domestic surveillance)",
+      "FISA Court created (1978) to oversee intelligence surveillance",
+      "Campaign finance reform (Federal Election Campaign Act amendments, 1974)",
+      "Lasting collapse of trust in government — polls show trust never recovered to pre-Watergate levels",
+      "Every political scandal since gets a '-gate' suffix"
+    ],
+    exam:"Watergate is not just about Nixon — it revealed the extent of executive branch overreach and illegal government activity (CIA, FBI) that had been building since the Cold War began. The Church Committee revelations were in some ways more important than the break-in itself."
+  },
+  {
+    t:"Iranian Hostage Crisis",cat:"Foreign Policy",c:"pr",
+    def:"The 444-day crisis (November 1979–January 1981) in which 52 American diplomats were held hostage at the U.S. Embassy in Tehran by Iranian revolutionary students, devastating Carter's presidency.",
+    context:"The root goes back to 1953: the CIA overthrew Iran's democratic Prime Minister Mossadegh and reinstalled the Shah, creating lasting anti-American resentment. The Shah's regime was brutal and corrupt. The 1979 Islamic Revolution swept it away. Carter allowed the ill Shah into the U.S. for cancer treatment. Iranian students saw this as the beginning of another U.S. attempt to restore the Shah. On November 4, 1979, they stormed the embassy and took 52 Americans hostage.",
+    impact:[
+      "444 days in captivity — the nightly news counted each day",
+      "Failed rescue mission (Operation Eagle Claw, April 1980): 8 soldiers died when helicopters malfunctioned in desert; humiliating failure",
+      "Secretary of State Vance resigned in protest of the rescue mission",
+      "Carter froze $12B in Iranian assets; imposed economic sanctions",
+      "Released literally minutes after Reagan was inaugurated (January 20, 1981) — suspiciously timed; 'October Surprise' allegations remain controversial",
+      "Long-lasting rupture in U.S.-Iran relations — still affects geopolitics today",
+      "Cemented Carter's image as ineffective and strengthened Reagan's 'morning in America' contrast"
+    ],
+    exam:"The Iranian Hostage Crisis is the culmination of Unit 8's narrative of American decline and disillusionment. It connects to: U.S. Cold War interventionism (1953 coup), OPEC and oil (Iran was a major producer), Carter's inability to project strength, and Reagan's rise."
+  },
+];
+
+function buildDflu() {
+  const list = document.getElementById('dflu-list');
+  DFLU.forEach((item, idx) => {
+    const d = document.createElement('div');
+    d.className = 'dflu';
+    const impactHTML = item.impact ? '<div class="who">Why it mattered:</div><ul>' + item.impact.map(i=>`<li>${i}</li>`).join('') + '</ul>' : '';
+    d.innerHTML = `
+      <div class="dflu-header" onclick="toggleDflu(this)">
+        <span class="dflu-num">${String(idx+1).padStart(2,'0')}</span>
+        <span class="dflu-term">${item.t}</span>
+        <span class="dflu-cat pill ${item.c}">${item.cat}</span>
+        <span class="dflu-arrow">›</span>
+      </div>
+      <div class="dflu-body">
+        <p><strong>Definition:</strong> ${item.def}</p>
+        <div class="who">Context:</div>
+        <p>${item.context}</p>
+        ${impactHTML}
+        <div class="why"><strong>APUSH Exam relevance:</strong> ${item.exam}</div>
+      </div>`;
+    list.appendChild(d);
+  });
+}
+
+function toggleDflu(header) {
+  header.parentElement.classList.toggle('open');
+}
+
+// ── QUIZ DATA ─────────────────────────────────────────────
+const QS = [
+  {q:"What was the main purpose of the Marshall Plan (1948)?",o:["To fund the Korean War effort","Rebuild Western European economies to prevent communist takeovers","Create NATO's military infrastructure","Establish the CIA"],a:1,e:"The Marshall Plan gave $13.3 billion to rebuild war-devastated Western Europe. The strategic logic was that poverty breeds communism — economic recovery would prevent communist parties from winning elections in France and Italy."},
+  {q:"Eisenhower's 1961 farewell address most famously warned about:",o:["The danger of Soviet nuclear weapons","The Military-Industrial Complex","The need to desegregate the military","America's dependence on foreign oil"],a:1,e:"Eisenhower warned that the alliance between defense contractors, the military, and Congress could exert undue influence on policy and endanger democracy. Coming from the general who won WWII, it was a remarkable warning."},
+  {q:"What was the 'Double V Campaign' in WWII?",o:["Victory in Europe and victory in the Pacific","Victory over fascism abroad and victory over racism at home","Voting rights and desegregation","V-E Day and V-J Day"],a:1,e:"The Double V Campaign, promoted by the Pittsburgh Courier, argued that Black Americans should fight for democracy abroad AND demand it at home. It set the stage for the postwar Civil Rights Movement."},
+  {q:"Brown v. Board of Education (1954) overturned which earlier ruling?",o:["Dred Scott v. Sandford","Korematsu v. United States","Plessy v. Ferguson","Marbury v. Madison"],a:2,e:"Plessy v. Ferguson (1896) had established the 'separate but equal' doctrine. Brown declared that separate educational facilities were inherently unequal — psychological harm to Black children was part of Marshall's argument."},
+  {q:"The Civil Rights Act of 1964 was most significant for:",o:["Integrating the armed forces","Banning discrimination in public accommodations and employment; creating the EEOC","Guaranteeing voting rights","Ending the poll tax"],a:1,e:"The Civil Rights Act banned discrimination in public places and employment based on race, color, religion, sex, and national origin. Note: the Voting Rights Act (1965) addressed voting specifically; the 24th Amendment (1964) ended the federal poll tax."},
+  {q:"Why did LBJ decline to seek re-election in 1968?",o:["Health problems","The Tet Offensive destroyed his credibility on Vietnam","The Watergate scandal","He had already served two full terms"],a:1,e:"The Tet Offensive (January 1968) showed that despite years of optimistic reports, the U.S. was not winning the war. LBJ's approval ratings collapsed. He announced March 31, 1968 that he would not seek re-election."},
+  {q:"Nixon's 'Vietnamization' policy involved:",o:["Declaring formal war on North Vietnam","Gradually withdrawing U.S. troops while training South Vietnamese forces","Escalating bombing to force quick victory","Negotiating directly with the Viet Cong"],a:1,e:"Vietnamization: withdraw U.S. troops on a schedule while training South Vietnam's army to fight. Troop levels fell from 543,000 to 50,000. Meanwhile, Nixon secretly expanded the war by bombing Cambodia."},
+  {q:"The Saturday Night Massacre (1973) refers to:",o:["The Kent State shootings","Nixon's firing of Special Prosecutor Cox after two senior officials resigned rather than do it","The Chicago DNC police riot","The bombing of Cambodia"],a:1,e:"Nixon ordered AG Richardson to fire Special Prosecutor Cox. Richardson resigned. Deputy AG Ruckelshaus resigned. Solicitor General Bork finally fired Cox. The firings triggered massive public outrage and accelerated impeachment proceedings."},
+  {q:"The War Powers Act (1973) was primarily a response to:",o:["Watergate","Nixon's secret bombing of Cambodia and the broader pattern of presidents waging undeclared wars","The Pentagon Papers","The Kent State shootings"],a:1,e:"Congress passed the War Powers Act over Nixon's veto to reassert its constitutional role in war-making. Presidents had been committing troops — Korea (Truman), Vietnam (LBJ/Nixon) — without declarations of war. Nixon's secret Cambodia bombing was the immediate trigger."},
+  {q:"Stagflation, the economic problem of the 1970s, was unusual because:",o:["Inflation and depression occurred simultaneously","High inflation AND high unemployment occurred simultaneously, which standard economic theory said was impossible","The stock market crashed while GDP grew","Unemployment was zero but prices rose"],a:1,e:"Standard economic theory (the Phillips Curve) held that inflation and unemployment moved in opposite directions. The 1970s broke this model — both were high simultaneously due to oil price shocks, deficit spending from Vietnam, and the end of the gold standard."},
+  {q:"The Stonewall Riots (1969) were significant because they:",o:["Protested Nixon's election","Sparked the modern LGBTQ+ rights movement after police raided a gay bar and patrons fought back","Began the Chicano civil rights movement","Protested the draft"],a:1,e:"NYC police raided the Stonewall Inn. Patrons — including trans women of color Marsha P. Johnson and Sylvia Rivera — fought back. Within months, Gay Liberation Front formed. Annual Pride marches began on the anniversary."},
+  {q:"César Chávez and the United Farm Workers' primary tactic was:",o:["Armed self-defense against farm owners","Grape and lettuce boycotts and labor strikes for farmworker contracts","Filing lawsuits against discriminatory employers","Voter registration drives in agricultural areas"],a:1,e:"Chávez and Dolores Huerta's UFW organized California farmworkers through strikes and national boycotts. The grape boycott (1965-70) persuaded millions of Americans to stop buying California grapes, eventually winning contracts for farmworkers."},
+  {q:"Nixon's 'Opening of China' (1972) was strategically aimed at:",o:["Expanding trade with Asian markets","Driving a wedge between China and the USSR, making the Soviet Union more cooperative","Opposing the Vietnam War from a different angle","Winning Asian American votes"],a:1,e:"Nixon and Kissinger calculated that establishing relations with China would make the Soviets more anxious about their eastern flank and more willing to negotiate with the U.S. It was classic 'realist' balance-of-power diplomacy — made possible because Nixon's anti-communist credentials protected him from being called 'soft.'"},
+  {q:"Betty Friedan's 'The Feminine Mystique' (1963) argued that:",o:["Women needed equal pay for equal work","Middle-class suburban women were suffocating from cultural expectations that they find complete fulfillment in domesticity","The ERA should be immediately ratified","Women should enter the military on equal terms"],a:1,e:"Friedan surveyed her Smith College classmates and found widespread depression and unfulfillment in their apparently perfect suburban lives. She named 'the problem that has no name' — the cultural expectation that domesticity was sufficient. The book sold 1.4 million copies and helped launch second-wave feminism."},
+  {q:"The Iranian Hostage Crisis began because:",o:["Iran wanted to nationalize U.S. oil companies","Carter allowed the deposed Shah into the U.S. for medical treatment, angering Iranian revolutionaries who stormed the embassy","Iran was testing Carter's resolve as a new president","Iran blamed the U.S. for the Soviet invasion of Afghanistan"],a:1,e:"After the Shah was deposed by the Islamic Revolution (1979), Carter allowed him into the U.S. for cancer treatment. Iranian students saw this as the beginning of another U.S. attempt to restore him — just as the CIA had restored the Shah after overthrowing Mossadegh in 1953."},
+  {q:"The Voting Rights Act of 1965 did all of the following EXCEPT:",o:["Eliminated literacy tests","Required federal oversight of elections in historically discriminatory states (Section 5)","Banned discrimination in public accommodations like restaurants and hotels","Sent federal registrars to register Black voters in the South"],a:2,e:"Banning discrimination in public accommodations was accomplished by the Civil Rights Act of 1964, not the Voting Rights Act. The VRA specifically targeted barriers to voting: literacy tests, poll taxes, and required federal oversight (Section 5, later gutted by Shelby County v. Holder in 2013)."},
+  {q:"The Black Panther Party's community programs included:",o:["Legal challenges to segregation in courts","Armed raids on white-owned businesses","Free breakfast programs for children and free health clinics","Voter registration drives across the South"],a:2,e:"While known for their armed self-defense stance, the Panthers' actual daily work included free breakfasts for 10,000 children daily and free health clinics in 13 cities. These 'survival programs' were seen as more threatening by the FBI than their guns — because they built popular support."},
+  {q:"The 1973 OPEC oil embargo was triggered by:",o:["U.S. failure to pay oil debts","U.S. support for Israel in the Yom Kippur War","Nixon's removal of the gold standard","U.S. support for the Iranian Shah"],a:1,e:"Arab OPEC nations cut off oil to the U.S. and Netherlands for supporting Israel when Egypt and Syria attacked on Yom Kippur. Oil prices quadrupled overnight, creating long gas lines and contributing to the inflation that plagued the 1970s."},
+  {q:"What was the significance of the Kerner Commission Report (1968)?",o:["It recommended escalating the Vietnam War","It blamed 'white racism' for creating conditions that caused urban uprisings and warned of 'two societies, separate and unequal'","It recommended Nixon's Southern Strategy","It called for disbanding the Black Panther Party"],a:1,e:"LBJ created the Kerner Commission to investigate the 1967 urban riots. Its conclusion shocked many whites: the riots were caused by white racism — discriminatory housing, employment, and policing — not outside agitators. LBJ buried the report; Nixon ignored it. Its warning about two Americas remains relevant."},
+  {q:"McCarthyism was ultimately ended primarily by:",o:["Kennedy's election in 1960","The Army-McCarthy Hearings (1954), which exposed his methods on national television","J. Edgar Hoover's investigation of McCarthy","A Supreme Court ruling against his tactics"],a:1,e:"The Army-McCarthy Hearings (1954) were televised nationally. 20 million Americans watched McCarthy bully witnesses. Army counsel Joseph Welch's famous line — 'Have you no sense of decency, sir, at long last?' — turned public opinion. The Senate censured McCarthy 67-22 in December 1954. He died in 1957."},
+];
+
+let cur=0, score=0, answered=new Set();
+function renderQ() {
+  const q = QS[cur];
+  const done = answered.has(cur);
+  document.getElementById('qprog').textContent = `Question ${cur+1} of ${QS.length}  ·  ${score} correct so far`;
+  document.getElementById('qscore').textContent = `${score} / ${answered.size} correct`;
+  const opts = q.o.map((o,i) => {
+    let cls = '';
+    if (done && i === q.a) cls = 'ok';
+    return `<button class="qopt ${cls}" onclick="ansQ(${i})" ${done?'disabled':''}>${o}</button>`;
+  }).join('');
+  const expl = done ? `<div class="qexpl">${q.e}</div>` : '';
+  document.getElementById('qcontainer').innerHTML =
+    `<div class="qcard"><p class="qt">${q.q}</p>${opts}${expl}</div>`;
+}
+function ansQ(i) {
+  if (answered.has(cur)) return;
+  answered.add(cur);
+  const q = QS[cur];
+  if (i === q.a) score++;
+  document.getElementById('qscore').textContent = `${score} / ${answered.size} correct`;
+  const btns = document.querySelectorAll('.qopt');
+  btns.forEach((b,idx) => { b.disabled=true; if(idx===q.a) b.classList.add('ok'); else if(idx===i) b.classList.add('no'); });
+  const fb = document.createElement('p');
+  fb.className = 'qfb ' + (i===q.a ? 'good' : 'bad');
+  fb.textContent = i===q.a ? '✓ Correct!' : '✗ Incorrect — see the correct answer highlighted above.';
+  const expl = document.createElement('div');
+  expl.className = 'qexpl';
+  expl.textContent = q.e;
+  const card = document.querySelector('.qcard');
+  card.appendChild(fb);
+  card.appendChild(expl);
+}
+function nextQ() { cur=(cur+1)%QS.length; renderQ(); }
+function resetQ() { cur=0; score=0; answered=new Set(); renderQ(); }
+
+// Init
+buildFlu();
+buildDflu();
+renderQ();
+</script>
+</body>
+</html>
