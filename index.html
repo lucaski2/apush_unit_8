@@ -629,7 +629,7 @@ h3.sh { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transfor
   <div class="chat-header">
     <div>
       <div class="ch-title">✦ APUSH AI Tutor</div>
-      <div class="ch-sub">Powered by Gemini Flash · Unit 8: 1945–1980</div>
+      <div class="ch-sub">Powered by Gemini 2.0 Flash · Unit 8: 1945–1980</div>
     </div>
     <button onclick="toggleChat()" title="Close">✕</button>
   </div>
@@ -1217,7 +1217,7 @@ async function sendChat(prefill, contextLabel) {
     };
 
     const res = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${GEMINI_KEY}`,
+      `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${GEMINI_KEY}`,
       { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) }
     );
 
