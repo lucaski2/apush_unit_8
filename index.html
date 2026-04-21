@@ -142,6 +142,98 @@ h3.sh { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transfor
 .qexpl { font-size:12px; color:var(--muted); margin-top:6px; line-height:1.6; padding:7px 10px; background:var(--bg); border-radius:var(--rs); }
 
 @media(max-width:600px) { main { padding:1rem; } header { padding:1.25rem; } }
+
+/* ── AI TUTOR TAB ── */
+.ai-setup { max-width: 520px; }
+.ai-setup h3 { font-size: 15px; font-weight: 600; margin-bottom: 0.5rem; }
+.ai-setup p { font-size: 13px; color: var(--muted); line-height: 1.65; margin-bottom: 1rem; }
+.key-row { display: flex; gap: 8px; margin-bottom: 0.75rem; }
+.key-row input { flex: 1; padding: 9px 12px; border: 1px solid var(--border2); border-radius: var(--rs); font-size: 13px; font-family: var(--sans); background: var(--card); color: var(--text); outline: none; }
+.key-row input:focus { border-color: var(--blue-m); }
+.key-row button, .ai-setup button { padding: 9px 16px; border: 1px solid var(--border2); border-radius: var(--rs); font-size: 13px; font-family: var(--sans); background: var(--text); color: var(--card); cursor: pointer; font-weight: 500; }
+.key-row button:hover { opacity: 0.85; }
+.ai-status { font-size: 12px; padding: 7px 11px; border-radius: var(--rs); margin-bottom: 1rem; }
+.ai-status.ok { background: var(--green-l); color: var(--green); }
+.ai-status.err { background: var(--red-l); color: var(--red); }
+.ai-status.idle { background: var(--bg); color: var(--muted); border: 1px solid var(--border); }
+.ai-tip { background: var(--amber-l); border: 1px solid var(--amber-m); border-radius: var(--rs); padding: 0.75rem 1rem; font-size: 12px; color: var(--amber); line-height: 1.6; margin-top: 1rem; }
+
+/* ── FLOATING CHAT BUBBLE ── */
+#chat-bubble {
+  position: fixed; bottom: 24px; right: 24px; z-index: 1000;
+  width: 48px; height: 48px; border-radius: 50%;
+  background: #1a1a18; color: #f7f6f2;
+  border: none; cursor: pointer; font-size: 20px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+  display: none; align-items: center; justify-content: center;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+#chat-bubble:hover { transform: scale(1.08); box-shadow: 0 6px 20px rgba(0,0,0,0.28); }
+#chat-bubble.visible { display: flex; }
+
+/* ── CHAT PANEL ── */
+#chat-panel {
+  position: fixed; bottom: 84px; right: 24px; z-index: 1000;
+  width: 360px; max-height: 520px;
+  background: var(--card); border: 1px solid var(--border2);
+  border-radius: 14px; box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+  display: none; flex-direction: column; overflow: hidden;
+}
+#chat-panel.open { display: flex; }
+.chat-header {
+  background: #1a1a18; color: #f7f6f2;
+  padding: 12px 16px; display: flex; align-items: center; justify-content: space-between;
+  flex-shrink: 0;
+}
+.chat-header .ch-title { font-size: 13px; font-weight: 600; }
+.chat-header .ch-sub { font-size: 10px; opacity: 0.5; margin-top: 1px; }
+.chat-header button { background: transparent; border: none; color: #f7f6f2; cursor: pointer; font-size: 16px; opacity: 0.6; padding: 2px 4px; }
+.chat-header button:hover { opacity: 1; }
+.chat-msgs {
+  flex: 1; overflow-y: auto; padding: 12px;
+  display: flex; flex-direction: column; gap: 8px;
+  scroll-behavior: smooth;
+}
+.chat-msgs::-webkit-scrollbar { width: 4px; }
+.chat-msgs::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 2px; }
+.msg { max-width: 88%; padding: 8px 11px; border-radius: 10px; font-size: 12.5px; line-height: 1.55; }
+.msg.user { align-self: flex-end; background: #1a1a18; color: #f7f6f2; border-bottom-right-radius: 3px; }
+.msg.ai { align-self: flex-start; background: var(--bg); color: var(--text); border: 1px solid var(--border); border-bottom-left-radius: 3px; }
+.msg.ai.thinking { color: var(--hint); font-style: italic; }
+.msg .ctx { font-size: 10px; opacity: 0.55; margin-bottom: 4px; border-bottom: 1px solid rgba(255,255,255,0.15); padding-bottom: 4px; }
+.msg.ai .ctx { border-color: var(--border); }
+.chat-footer { padding: 10px; border-top: 1px solid var(--border); flex-shrink: 0; }
+.chat-input-row { display: flex; gap: 6px; }
+.chat-input-row input {
+  flex: 1; padding: 8px 11px; border: 1px solid var(--border2);
+  border-radius: 20px; font-size: 12.5px; font-family: var(--sans);
+  background: var(--bg); color: var(--text); outline: none;
+}
+.chat-input-row input:focus { border-color: var(--blue-m); background: var(--card); }
+.chat-input-row button {
+  width: 34px; height: 34px; border-radius: 50%;
+  background: #1a1a18; color: #f7f6f2; border: none;
+  cursor: pointer; font-size: 14px; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  transition: opacity 0.15s;
+}
+.chat-input-row button:hover { opacity: 0.8; }
+.chat-input-row button:disabled { opacity: 0.35; cursor: not-allowed; }
+.chat-clear { font-size: 10px; color: var(--hint); background: none; border: none; cursor: pointer; margin-top: 5px; padding: 0; }
+.chat-clear:hover { color: var(--muted); }
+
+/* ── HIGHLIGHT TOOLTIP ── */
+#sel-tooltip {
+  position: fixed; z-index: 2000;
+  background: #1a1a18; color: #f7f6f2;
+  padding: 5px 12px; border-radius: 20px;
+  font-size: 12px; font-weight: 600; font-family: var(--sans);
+  cursor: pointer; display: none; white-space: nowrap;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.25);
+  transition: opacity 0.1s;
+  user-select: none;
+}
+#sel-tooltip:hover { background: #333; }
 </style>
 </head>
 <body>
@@ -161,6 +253,7 @@ h3.sh { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transfor
   <button onclick="show('fl')">Fluency Flashcards</button>
   <button onclick="show('df')">Deep Fluency Facts</button>
   <button onclick="show('qz')">Quiz</button>
+  <button onclick="show('ai')" style="color:#1a1a18;font-weight:700">✦ AI Tutor</button>
 </nav>
 <main>
 
@@ -494,9 +587,68 @@ h3.sh { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transfor
   </div>
 </div>
 
+<!-- ═══════════════ AI TUTOR ═══════════════ -->
+<div class="section" id="ai">
+  <h2>AI Tutor — Powered by Gemini</h2>
+  <div class="ai-setup">
+    <p>Enter your Gemini API key to enable the AI tutor. Your key is stored only in your browser's memory and never sent anywhere except directly to Google's API. Get a free key at <a href="https://aistudio.google.com/app/apikey" target="_blank" style="color:var(--blue)">aistudio.google.com</a> — no credit card needed.</p>
+
+    <div class="key-row">
+      <input type="password" id="gemini-key-input" placeholder="Paste your Gemini API key here..." autocomplete="off" />
+      <button onclick="saveKey()">Save</button>
+    </div>
+
+    <div id="ai-status" class="ai-status idle">No key saved yet — enter your key above.</div>
+
+    <div style="margin-top:1.5rem;">
+      <h3>How to use</h3>
+      <p>Once your key is saved, two things unlock:</p>
+      <div class="card" style="margin-bottom:10px">
+        <h4>1. Highlight any text on the page</h4>
+        <p>Select any text while studying — a small <strong>"✦ Ask Gemini"</strong> button will appear. Click it to instantly ask the AI to explain that text in APUSH context.</p>
+      </div>
+      <div class="card">
+        <h4>2. Chat bubble in the bottom-right</h4>
+        <p>A floating chat button appears once your key is saved. Click it to open a full conversation with the AI tutor. Ask anything about Unit 8 — follow-up questions, essay help, comparisons, whatever you need.</p>
+      </div>
+    </div>
+
+    <div class="ai-tip">
+      <strong>Free tier:</strong> Gemini Flash gives you 1,500 requests/day and 1 million tokens/day for free — more than enough for studying. You won't be charged anything unless you explicitly upgrade.
+    </div>
+  </div>
+</div>
+
 </main>
+
+<!-- ── FLOATING CHAT BUBBLE ── -->
+<button id="chat-bubble" title="Ask AI Tutor" onclick="toggleChat()">✦</button>
+
+<!-- ── CHAT PANEL ── -->
+<div id="chat-panel">
+  <div class="chat-header">
+    <div>
+      <div class="ch-title">✦ APUSH AI Tutor</div>
+      <div class="ch-sub">Powered by Gemini Flash · Unit 8: 1945–1980</div>
+    </div>
+    <button onclick="toggleChat()" title="Close">✕</button>
+  </div>
+  <div class="chat-msgs" id="chat-msgs">
+    <div class="msg ai">Hi! I'm your APUSH Unit 8 tutor. Ask me anything about the Cold War, Civil Rights, Great Society, Nixon, Vietnam — or highlight text anywhere on the page and click "Ask Gemini" to get an instant explanation.</div>
+  </div>
+  <div class="chat-footer">
+    <div class="chat-input-row">
+      <input type="text" id="chat-input" placeholder="Ask anything about Unit 8..." onkeydown="if(event.key==='Enter')sendChat()" />
+      <button onclick="sendChat()" id="chat-send">➤</button>
+    </div>
+    <button class="chat-clear" onclick="clearChat()">clear conversation</button>
+  </div>
+</div>
+
+<!-- ── HIGHLIGHT TOOLTIP ── -->
+<div id="sel-tooltip" onclick="askAboutSelection()">✦ Ask Gemini</div>
 <script>
-const TABS = ['ov','cw','hf','pw','cr','lbj','nx','fl','df','qz'];
+const TABS = ['ov','cw','hf','pw','cr','lbj','nx','fl','df','qz','ai'];
 function show(id) {
   document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
   document.getElementById(id).classList.add('active');
@@ -948,6 +1100,217 @@ function resetQ() { cur=0; score=0; answered=new Set(); renderQ(); }
 buildFlu();
 buildDflu();
 renderQ();
+
+// ── GEMINI API KEY ────────────────────────────────────────
+let GEMINI_KEY = '';
+let chatHistory = [];
+const SYSTEM_PROMPT = `You are an expert APUSH (AP United States History) tutor specializing in Unit 8: Mid-20th Century America (1945–1980). Your student is preparing for their APUSH exam.
+
+Your expertise covers:
+- The Cold War: containment, Truman Doctrine, Marshall Plan, Korean War, Cuban Missile Crisis, Vietnam War, détente, SALT I, Opening of China
+- Cold War at Home: McCarthyism, Second Red Scare, Military-Industrial Complex, antiwar movement
+- Postwar Society: GI Bill, baby boom, suburbanization, Sunbelt, conformity, Beat Generation, JFK, counterculture, environmental movement
+- Civil Rights Movement: WWII origins through Black Power — Brown v. Board, Montgomery, sit-ins, Freedom Rides, Birmingham, March on Washington, Civil Rights Act 1964, Voting Rights Act 1965, Black Panthers, Stonewall, Chicano movement, AIM, women's liberation
+- LBJ & Great Society: Medicare, Medicaid, War on Poverty, 1964 and 1968 elections, Vietnam's impact
+- Nixon through Carter: Southern Strategy, Watergate, détente, stagflation, OPEC, Iranian Hostage Crisis
+- All 23 fluency terms: GI Bill, Korean War, Truman Doctrine, Marshall Plan, McCarthyism, Sunbelt, Brown v. Board, Vietnam War, Military-Industrial Complex, Civil Rights Act 1964, Great Society, Immigration Act 1965, Chicano Movement, Black Panther Party, Stonewall, Détente, EPA, ERA, War Powers Act 1973, Roe v. Wade, OPEC, Watergate, Iranian Hostage Crisis
+
+Guidelines:
+- Be concise but thorough — students need clarity, not walls of text
+- Always connect events to APUSH themes: continuity/change, causation, comparison, contextualization
+- When explaining terms, include: what it is, why it happened, its impact, and APUSH exam significance
+- Use specific dates, names, and evidence
+- When a student shares highlighted text, explain it in context and suggest connections to other Unit 8 topics
+- Be encouraging and keep energy up — studying history should be engaging`;
+
+function saveKey() {
+  const val = document.getElementById('gemini-key-input').value.trim();
+  if (!val) { setStatus('Please paste your API key first.', 'err'); return; }
+  GEMINI_KEY = val;
+  document.getElementById('gemini-key-input').value = '';
+  setStatus('✓ Key saved! The chat bubble is now active. You can navigate away from this tab.', 'ok');
+  document.getElementById('chat-bubble').classList.add('visible');
+}
+
+function setStatus(msg, type) {
+  const el = document.getElementById('ai-status');
+  el.textContent = msg;
+  el.className = 'ai-status ' + type;
+}
+
+// ── CHAT ─────────────────────────────────────────────────
+function toggleChat() {
+  const panel = document.getElementById('chat-panel');
+  panel.classList.toggle('open');
+  if (panel.classList.contains('open')) {
+    setTimeout(() => document.getElementById('chat-input').focus(), 100);
+    scrollMsgs();
+  }
+}
+
+function clearChat() {
+  chatHistory = [];
+  const msgs = document.getElementById('chat-msgs');
+  msgs.innerHTML = '<div class="msg ai">Conversation cleared. Ask me anything about Unit 8!</div>';
+}
+
+function scrollMsgs() {
+  const msgs = document.getElementById('chat-msgs');
+  msgs.scrollTop = msgs.scrollHeight;
+}
+
+function addMsg(text, role, contextLabel) {
+  const msgs = document.getElementById('chat-msgs');
+  const div = document.createElement('div');
+  div.className = 'msg ' + role;
+  if (contextLabel) {
+    div.innerHTML = `<div class="ctx">Re: "${contextLabel}"</div>${escHtml(text)}`;
+  } else {
+    div.textContent = text;
+  }
+  msgs.appendChild(div);
+  scrollMsgs();
+  return div;
+}
+
+function addThinking() {
+  const msgs = document.getElementById('chat-msgs');
+  const div = document.createElement('div');
+  div.className = 'msg ai thinking';
+  div.id = 'thinking-msg';
+  div.textContent = 'Thinking...';
+  msgs.appendChild(div);
+  scrollMsgs();
+}
+
+function removeThinking() {
+  const t = document.getElementById('thinking-msg');
+  if (t) t.remove();
+}
+
+function escHtml(str) {
+  return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+async function sendChat(prefill, contextLabel) {
+  if (!GEMINI_KEY) {
+    toggleChat();
+    show('ai');
+    return;
+  }
+  const input = document.getElementById('chat-input');
+  const userText = prefill || input.value.trim();
+  if (!userText) return;
+  input.value = '';
+
+  document.getElementById('chat-send').disabled = true;
+  addMsg(userText, 'user', contextLabel ? contextLabel.slice(0, 60) + (contextLabel.length > 60 ? '…' : '') : null);
+  addThinking();
+
+  chatHistory.push({ role: 'user', parts: [{ text: userText }] });
+
+  try {
+    const body = {
+      system_instruction: { parts: [{ text: SYSTEM_PROMPT }] },
+      contents: chatHistory,
+      generationConfig: { maxOutputTokens: 1024, temperature: 0.7 }
+    };
+
+    const res = await fetch(
+      `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${GEMINI_KEY}`,
+      { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) }
+    );
+
+    const data = await res.json();
+    removeThinking();
+
+    if (!res.ok) {
+      const errMsg = data?.error?.message || 'API error. Check your key.';
+      addMsg('Error: ' + errMsg, 'ai');
+      chatHistory.pop();
+      return;
+    }
+
+    const reply = data?.candidates?.[0]?.content?.parts?.[0]?.text || 'No response received.';
+    chatHistory.push({ role: 'model', parts: [{ text: reply }] });
+
+    // Render reply with basic markdown-ish formatting
+    const msgs = document.getElementById('chat-msgs');
+    const div = document.createElement('div');
+    div.className = 'msg ai';
+    div.innerHTML = formatReply(reply);
+    msgs.appendChild(div);
+    scrollMsgs();
+
+  } catch (e) {
+    removeThinking();
+    addMsg('Network error: ' + e.message, 'ai');
+    chatHistory.pop();
+  }
+
+  document.getElementById('chat-send').disabled = false;
+  document.getElementById('chat-input').focus();
+}
+
+function formatReply(text) {
+  // Simple markdown: bold, bullets, line breaks
+  return text
+    .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
+    .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+    .replace(/\*(.+?)\*/g, '<em>$1</em>')
+    .replace(/^- (.+)$/gm, '• $1')
+    .replace(/\n/g, '<br>');
+}
+
+// ── TEXT SELECTION / HIGHLIGHT ────────────────────────────
+let selectedText = '';
+const tooltip = document.getElementById('sel-tooltip');
+
+document.addEventListener('mouseup', (e) => {
+  if (e.target.closest('#chat-panel') || e.target.closest('#sel-tooltip')) return;
+  setTimeout(() => {
+    const sel = window.getSelection();
+    const text = sel ? sel.toString().trim() : '';
+    if (text.length > 10 && text.length < 1000) {
+      selectedText = text;
+      const range = sel.getRangeAt(0);
+      const rect = range.getBoundingClientRect();
+      tooltip.style.left = Math.min(rect.left + window.scrollX, window.innerWidth - 160) + 'px';
+      tooltip.style.top = (rect.top + window.scrollY - 38) + 'px';
+      tooltip.style.display = 'block';
+    } else {
+      tooltip.style.display = 'none';
+      selectedText = '';
+    }
+  }, 10);
+});
+
+document.addEventListener('mousedown', (e) => {
+  if (e.target !== tooltip) {
+    tooltip.style.display = 'none';
+  }
+});
+
+function askAboutSelection() {
+  if (!selectedText) return;
+  tooltip.style.display = 'none';
+
+  if (!GEMINI_KEY) {
+    show('ai');
+    alert('Enter your Gemini API key in the AI Tutor tab first!');
+    return;
+  }
+
+  const question = `Explain this in the context of APUSH Unit 8 (1945–1980): "${selectedText}"`;
+  const label = selectedText;
+
+  // Open chat if not open
+  const panel = document.getElementById('chat-panel');
+  if (!panel.classList.contains('open')) panel.classList.add('open');
+
+  sendChat(question, label);
+  window.getSelection().removeAllRanges();
+}
 </script>
 </body>
 </html>
