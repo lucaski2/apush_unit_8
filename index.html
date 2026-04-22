@@ -781,30 +781,46 @@ h3.sh { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transfor
 <div class="section" id="ai">
   <h2>AI Tutor — Powered by Gemini</h2>
   <div class="ai-setup">
-    <p>Enter your Gemini API key to enable the AI tutor. Your key is stored only in your browser's memory and never sent anywhere except directly to Google's API. Get a free key at <a href="https://aistudio.google.com/app/apikey" target="_blank" style="color:var(--blue)">aistudio.google.com</a> — no credit card needed.</p>
 
-    <div class="key-row">
-      <input type="password" id="gemini-key-input" placeholder="Paste your Gemini API key here..." autocomplete="off" />
-      <button onclick="saveKey()">Save</button>
+    <p>Choose how to connect the AI tutor. The shared key is ready to use instantly — or use your own for a private connection with no traffic from other users.</p>
+
+    <div style="display:flex;gap:8px;margin-bottom:1rem;">
+      <button id="btn-shared" onclick="selectMode('shared')" style="flex:1;padding:10px;border-radius:var(--rs);border:2px solid var(--text);background:var(--text);color:var(--card);cursor:pointer;font-family:var(--sans);font-size:13px;font-weight:600;transition:all 0.15s;">⚡ Use shared key</button>
+      <button id="btn-own" onclick="selectMode('own')" style="flex:1;padding:10px;border-radius:var(--rs);border:2px solid var(--border2);background:transparent;color:var(--text);cursor:pointer;font-family:var(--sans);font-size:13px;font-weight:600;transition:all 0.15s;">🔑 Use my own key</button>
     </div>
 
-    <div id="ai-status" class="ai-status idle">No key saved yet — enter your key above.</div>
+    <!-- Shared key panel -->
+    <div id="panel-shared">
+      <div class="ai-tip" style="margin-bottom:0.75rem;">
+        <strong>Shared key:</strong> Pre-loaded and ready. Limited to ~15 requests/minute across all users — if it hits the limit, wait 60 seconds and try again. The key resets daily.
+      </div>
+      <button onclick="activateShared()" style="padding:9px 20px;border-radius:var(--rs);border:1px solid var(--border2);background:var(--text);color:var(--card);cursor:pointer;font-family:var(--sans);font-size:13px;font-weight:600;">Activate shared key →</button>
+    </div>
+
+    <!-- Own key panel -->
+    <div id="panel-own" style="display:none;">
+      <div class="ai-tip" style="margin-bottom:0.75rem;">
+        <strong>Your own key:</strong> Get a free key at <a href="https://aistudio.google.com/app/apikey" target="_blank" style="color:var(--amber)">aistudio.google.com</a> — no credit card needed. Stored in browser memory only, never in code.
+      </div>
+      <div class="key-row">
+        <input type="password" id="gemini-key-input" placeholder="Paste your Gemini API key here..." autocomplete="off" />
+        <button onclick="saveOwnKey()">Save</button>
+      </div>
+    </div>
+
+    <div id="ai-status" class="ai-status idle" style="margin-top:0.75rem;">No key active yet — choose an option above.</div>
 
     <div style="margin-top:1.5rem;">
       <h3>How to use</h3>
-      <p>Once your key is saved, two things unlock:</p>
+      <p style="font-size:13px;color:var(--muted);margin-top:0.4rem;margin-bottom:0.75rem;">Once activated, two things unlock:</p>
       <div class="card" style="margin-bottom:10px">
         <h4>1. Highlight any text on the page</h4>
         <p>Select any text while studying — a small <strong>"✦ Ask Gemini"</strong> button will appear. Click it to instantly ask the AI to explain that text in APUSH context.</p>
       </div>
       <div class="card">
         <h4>2. Chat bubble in the bottom-right</h4>
-        <p>A floating chat button appears once your key is saved. Click it to open a full conversation with the AI tutor. Ask anything about Unit 8 — follow-up questions, essay help, comparisons, whatever you need.</p>
+        <p>A floating chat button appears once your key is active. Click it to open a full conversation. Ask anything about Unit 8 — follow-up questions, essay help, comparisons, whatever you need.</p>
       </div>
-    </div>
-
-    <div class="ai-tip">
-      <strong>Free tier:</strong> Gemini Flash gives you 1,500 requests/day and 1 million tokens/day for free — more than enough for studying. You won't be charged anything unless you explicitly upgrade.
     </div>
   </div>
 </div>
@@ -1309,8 +1325,61 @@ buildDflu();
 renderQ();
 
 // ── GEMINI API KEY ────────────────────────────────────────
+const SHARED_KEY = 'AIzaSyDlzhtH0nhxmkefXZ_AAe_pQUGcLJqKRtk';
 let GEMINI_KEY = '';
+
+function selectMode(mode) {
+  const sharedPanel = document.getElementById('panel-shared');
+  const ownPanel = document.getElementById('panel-own');
+  const btnShared = document.getElementById('btn-shared');
+  const btnOwn = document.getElementById('btn-own');
+  if (mode === 'shared') {
+    sharedPanel.style.display = 'block';
+    ownPanel.style.display = 'none';
+    btnShared.style.background = 'var(--text)';
+    btnShared.style.color = 'var(--card)';
+    btnShared.style.borderColor = 'var(--text)';
+    btnOwn.style.background = 'transparent';
+    btnOwn.style.color = 'var(--text)';
+    btnOwn.style.borderColor = 'var(--border2)';
+  } else {
+    sharedPanel.style.display = 'none';
+    ownPanel.style.display = 'block';
+    btnOwn.style.background = 'var(--text)';
+    btnOwn.style.color = 'var(--card)';
+    btnOwn.style.borderColor = 'var(--text)';
+    btnShared.style.background = 'transparent';
+    btnShared.style.color = 'var(--text)';
+    btnShared.style.borderColor = 'var(--border2)';
+  }
+}
+
+function activateShared() {
+  GEMINI_KEY = SHARED_KEY;
+  setStatus('⚡ Shared key active! Chat bubble is ready. If you hit rate limits, wait 60 seconds.', 'ok');
+  document.getElementById('chat-bubble').classList.add('visible');
+}
+
+function saveOwnKey() {
+  const val = document.getElementById('gemini-key-input').value.trim();
+  if (!val) { setStatus('Please paste your API key first.', 'err'); return; }
+  GEMINI_KEY = val;
+  document.getElementById('gemini-key-input').value = '';
+  setStatus('🔑 Your key is active! The chat bubble is ready. You can navigate away from this tab.', 'ok');
+  document.getElementById('chat-bubble').classList.add('visible');
+}
+
+// Keep old saveKey as alias just in case
+function saveKey() { saveOwnKey(); }
+
+function setStatus(msg, type) {
+  const el = document.getElementById('ai-status');
+  el.textContent = msg;
+  el.className = 'ai-status ' + type;
+}
+
 let chatHistory = [];
+
 const SYSTEM_PROMPT = `You are an expert APUSH (AP United States History) tutor specializing in Unit 8: Mid-20th Century America (1945–1980). Your student is preparing for their APUSH exam.
 
 Your expertise covers:
