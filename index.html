@@ -1374,44 +1374,52 @@ function askAboutSelection() {
     const dx = e.clientX - startX;
     const dy = e.clientY - startY;
 
-    let newW = startW, newH = startH;
+    let newW = startW;
+    let newH = startH;
+    let newRight = startRight;
 
-    // Expand rightward (panel gets wider, right edge moves right — but we're right-anchored so just grow width)
     if (dir === 'e') {
-      newW = Math.max(MIN_W, startW + dx);
+      // Right edge: dragging RIGHT shrinks (moves left edge right, right stays fixed)
+      // dragging LEFT grows (moves left edge left, right stays fixed)
+      newW = Math.max(MIN_W, startW - dx);
+      newRight = startRight; // right anchor unchanged
+      // adjust right so right edge stays put — actually right-anchored means
+      // width change alone moves left edge. But we want right edge to move.
+      // So: right anchor = startRight - dx to move right edge
+      newRight = startRight - dx;
+      if (newRight < 0) newRight = 0;
     }
 
-    // Expand leftward (panel grows left — right anchor stays, width increases, so shift right value down)
-    if (dir === 'w' || dir === 'nw' || dir === 'sw') {
-      const candidate = startW - dx;
-      newW = Math.max(MIN_W, candidate);
-      // Shift right anchor so the right edge stays fixed and left edge moves
-      const clampedW = Math.min(newW, window.innerWidth * 0.9);
-      panel.style.right = (startRight + startW - clampedW) + 'px';
+    if (dir === 'w' || dir === 'nw') {
+      // Left edge: dragging LEFT grows panel leftward
+      newW = Math.max(MIN_W, startW - dx);
+      // Right anchor stays fixed, left edge moves naturally with width
+      newRight = startRight;
     }
 
-    // Expand ne: wider to the right, taller upward
     if (dir === 'ne') {
-      newW = Math.max(MIN_W, startW + dx);
+      // Top-right: right edge moves, height grows upward
+      newRight = startRight - dx;
+      if (newRight < 0) newRight = 0;
       newH = Math.max(MIN_H, startH - dy);
     }
 
-    // Expand nw: wider to the left, taller upward
-    // (already handled w above for width; handle height here)
-    if (dir === 'n' || dir === 'nw') {
-      newH = Math.max(MIN_H, startH - dy);
-    }
-
-    // n-only (no width change, just height)
     if (dir === 'n') {
-      newW = startW; // no horizontal change
+      newH = Math.max(MIN_H, startH - dy);
+      newRight = startRight;
     }
 
-    newW = Math.min(newW, window.innerWidth * 0.9);
-    newH = Math.min(newH, window.innerHeight * 0.85);
+    if (dir === 'nw') {
+      newH = Math.max(MIN_H, startH - dy);
+    }
 
-    panel.style.width = newW + 'px';
+    // Clamp
+    newW = Math.min(Math.max(newW, MIN_W), window.innerWidth * 0.9);
+    newH = Math.min(Math.max(newH, MIN_H), window.innerHeight * 0.85);
+
+    panel.style.width  = newW + 'px';
     panel.style.height = newH + 'px';
+    panel.style.right  = newRight + 'px';
   });
 
   document.addEventListener('mouseup', () => {
