@@ -1376,18 +1376,35 @@ function askAboutSelection() {
 
     let newW = startW, newH = startH;
 
-    // Horizontal
-    if (dir.includes('e')) {
+    // Expand rightward (panel gets wider, right edge moves right — but we're right-anchored so just grow width)
+    if (dir === 'e') {
       newW = Math.max(MIN_W, startW + dx);
     }
-    if (dir.includes('w')) {
-      newW = Math.max(MIN_W, startW - dx);
-      if (newW > MIN_W) panel.style.right = (startRight + startW - newW) + 'px';
+
+    // Expand leftward (panel grows left — right anchor stays, width increases, so shift right value down)
+    if (dir === 'w' || dir === 'nw' || dir === 'sw') {
+      const candidate = startW - dx;
+      newW = Math.max(MIN_W, candidate);
+      // Shift right anchor so the right edge stays fixed and left edge moves
+      const clampedW = Math.min(newW, window.innerWidth * 0.9);
+      panel.style.right = (startRight + startW - clampedW) + 'px';
     }
 
-    // Vertical (panel grows upward since anchored to bottom)
-    if (dir.includes('n')) {
+    // Expand ne: wider to the right, taller upward
+    if (dir === 'ne') {
+      newW = Math.max(MIN_W, startW + dx);
       newH = Math.max(MIN_H, startH - dy);
+    }
+
+    // Expand nw: wider to the left, taller upward
+    // (already handled w above for width; handle height here)
+    if (dir === 'n' || dir === 'nw') {
+      newH = Math.max(MIN_H, startH - dy);
+    }
+
+    // n-only (no width change, just height)
+    if (dir === 'n') {
+      newW = startW; // no horizontal change
     }
 
     newW = Math.min(newW, window.innerWidth * 0.9);
